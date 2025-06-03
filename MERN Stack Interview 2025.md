@@ -255,3 +255,362 @@ Through HTTP requests (usually via `fetch()` or `axios`) to API endpoints.
 ---
 ---
 
+## 🟡 **INTERMEDIATE LEVEL (1–3 Years) — 40 Questions with Answers**
+
+---
+
+### ⚛️ React.js Intermediate
+
+**31. What are React Hooks?**  
+Hooks are functions that let you use state and lifecycle features in functional components. Common hooks: `useState`, `useEffect`, `useContext`, `useMemo`, etc.
+
+---
+
+**32. Explain `useContext` and where you’d use it.**  
+`useContext` allows you to access global values in any component without prop drilling.  
+Example: managing theme, user login state globally.
+
+---
+
+**33. What is prop drilling and how to avoid it?**  
+Prop drilling is passing props through multiple levels unnecessarily.  
+Avoid with:
+
+- `useContext`
+    
+- State management libraries like Redux or Zustand
+    
+
+---
+
+**34. What is lifting state up?**  
+Moving shared state to a common ancestor component so it can be passed down to children.
+
+---
+
+**35. Difference between controlled and uncontrolled components?**
+
+- **Controlled**: Form elements controlled by React state
+    
+- **Uncontrolled**: Form elements manage their own state via refs
+    
+
+---
+
+**36. What are higher-order components (HOC)?**  
+Functions that take a component and return a new component with additional features.  
+Example: `withAuth(Component)`
+
+---
+
+**37. How does React handle forms?**  
+Using controlled components. Form inputs are bound to component state and updated via `onChange`.
+
+---
+
+**38. What is conditional rendering?**  
+Rendering different elements/components based on conditions using JS expressions (`if`, `&&`, `? :`)
+
+---
+
+**39. How to optimize performance in React apps?**
+
+- Use `React.memo`, `useMemo`, and `useCallback`
+    
+- Code splitting with React.lazy
+    
+- Avoid unnecessary re-renders
+    
+- Use virtualization for long lists (e.g., `react-window`)
+    
+
+---
+
+**40. What is `useMemo` and `useCallback`?**
+
+- `useMemo`: Memoizes expensive computed values
+    
+- `useCallback`: Memoizes functions to avoid re-creating them on re-renders
+    
+
+---
+
+### 🟢 Node.js & Express Intermediate
+
+**41. Explain the Event Loop in Node.js.**  
+It handles non-blocking async operations by offloading them and executing callbacks when ready—enabling single-threaded concurrency.
+
+---
+
+**42. What are streams in Node.js?**  
+Streams are objects for reading/writing data in chunks (streaming). Types: Readable, Writable, Duplex, Transform.
+
+---
+
+**43. How do you handle async operations in Node.js?**  
+Using callbacks, Promises, and `async/await` syntax.
+
+---
+
+**44. How do you handle routing in Express?**  
+Using route methods:
+
+js
+
+CopyEdit
+
+`app.get('/users', handler); app.post('/login', handler);`
+
+---
+
+**45. How do you implement middleware in Express?**  
+Middleware functions sit between the request and response.
+
+js
+
+CopyEdit
+
+`app.use((req, res, next) => {   console.log(req.url); next(); });`
+
+---
+
+**46. How do you send JSON responses in Express?**
+
+js
+
+CopyEdit
+
+`res.json({ message: "Success" });`
+
+---
+
+**47. How do you structure a Node/Express project?**
+
+- `/routes` – API route definitions
+    
+- `/controllers` – logic for requests
+    
+- `/models` – MongoDB schemas
+    
+- `/middleware` – auth, error handlers
+    
+- `/config` – DB, env setup
+    
+
+---
+
+**48. How to secure routes using middleware?**  
+Create an auth middleware that checks JWT and applies it to protected routes:
+
+js
+
+CopyEdit
+
+`app.get('/profile', verifyToken, handler);`
+
+---
+
+**49. What is CORS and how do you resolve it?**  
+CORS (Cross-Origin Resource Sharing) blocks requests from different origins.  
+Fix: Use `cors` middleware in Express:
+
+js
+
+CopyEdit
+
+`app.use(require('cors')());`
+
+---
+
+**50. What is an environment variable and how to use `.env` in Node?**  
+Environment variables store sensitive/config info.  
+Use `dotenv`:
+
+js
+
+CopyEdit
+
+`require('dotenv').config(); const db = process.env.MONGO_URI;`
+
+---
+
+### 🌿 MongoDB Intermediate
+
+**51. What is an index in MongoDB?**  
+Indexes improve query performance by allowing faster lookups.  
+Example:
+
+js
+
+CopyEdit
+
+`db.users.createIndex({ email: 1 });`
+
+---
+
+**52. What are the advantages of using indexes?**
+
+- Faster queries
+    
+- Efficient sorting and filtering
+    
+- Optimized read performance
+    
+
+---
+
+**53. How to implement relationships in MongoDB?**
+
+- Embedding: Store related data in a single document
+    
+- Referencing: Store ObjectId of related document and use `$lookup` to join
+    
+
+---
+
+**54. What is the aggregation pipeline?**  
+A powerful framework for data transformation using stages like `$match`, `$group`, `$project`, `$sort`.
+
+---
+
+**55. What is `$lookup` in MongoDB?**  
+Performs a left outer join on another collection to combine documents.
+
+js
+
+CopyEdit
+
+`{ $lookup: { from: 'orders', localField: '_id', foreignField: 'userId', as: 'orders' } }`
+
+---
+
+**56. How to filter and project data in aggregation?**  
+Use `$match` to filter and `$project` to shape the output:
+
+js
+
+CopyEdit
+
+`{ $project: { name: 1, age: 1 } }`
+
+---
+
+**57. How to paginate results in MongoDB?**  
+Use `.skip()` and `.limit()`:
+
+js
+
+CopyEdit
+
+`db.users.find().skip(10).limit(10)`
+
+---
+
+**58. What data types does MongoDB support?**  
+String, Number, Boolean, Date, ObjectId, Array, Embedded Documents, Null, Binary Data, etc.
+
+---
+
+### 🔁 MERN Integration
+
+**59. How do you connect React frontend to Express backend?**  
+Make HTTP requests from React using `axios` or `fetch()` to Express API routes (usually via a proxy).
+
+---
+
+**60. How do you make API calls in React?**
+
+js
+
+CopyEdit
+
+`useEffect(() => {   fetch('/api/users').then(res => res.json()).then(data => setUsers(data)); }, []);`
+
+---
+
+**61. How to implement authentication in MERN?**
+
+- Backend: Validate user, generate JWT
+    
+- Frontend: Store token, use it for protected requests
+    
+- Use middleware to protect routes
+    
+
+---
+
+**62. How do you store JWT securely on frontend?**  
+Best practice: Use **HttpOnly cookies** (more secure). If localStorage is used, be cautious of XSS vulnerabilities.
+
+---
+
+**63. How to handle protected routes in React?**  
+Use a higher-order component or conditional rendering to restrict access:
+
+js
+
+CopyEdit
+
+`{isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}`
+
+---
+
+**64. How to upload images in MERN stack?**
+
+- Frontend: Use `FormData` and `fetch/axios`
+    
+- Backend: Use `multer` middleware
+    
+- Store in DB, cloud (e.g., Cloudinary), or filesystem
+    
+
+---
+
+**65. How to manage CORS in local development?**  
+Use `cors` in backend Express app:
+
+js
+
+CopyEdit
+
+`const cors = require('cors'); app.use(cors({ origin: 'http://localhost:3000' }));`
+
+---
+
+### 🧪 Testing & Tools
+
+**66. What is Postman used for?**  
+API testing tool to send HTTP requests, view responses, test endpoints during backend development.
+
+---
+
+**67. How do you debug a Node.js application?**
+
+- Use `console.log()`
+    
+- Use `node --inspect` and Chrome DevTools
+    
+- Use VS Code debugger
+    
+
+---
+
+**68. What is `nodemon`?**  
+A tool that automatically restarts the Node server when file changes are detected.
+
+---
+
+**69. What is `axios`?**  
+A promise-based HTTP client for the browser and Node.js, used to make API calls.
+
+---
+
+**70. What is the role of Git and GitHub in projects?**
+
+- **Git**: Version control to manage code changes
+    
+- **GitHub**: Cloud platform for hosting repositories and collaboration
+
+---
+---
+
