@@ -614,3 +614,285 @@ A promise-based HTTP client for the browser and Node.js, used to make API calls.
 ---
 ---
 
+## 🔴 **EXPERIENCED LEVEL (3+ Years) — 30 Questions with Answers**
+
+---
+
+### 🧠 System Design & Architecture
+
+**71. How do you structure a scalable MERN stack application?**
+
+- **Client**: React with modular folders (`pages`, `components`, `hooks`)
+    
+- **Server**: Express API split into `routes`, `controllers`, `models`, `middleware`
+    
+- **Shared Config**: Environment variables, constants
+    
+- Use modularity, RESTful principles, and proper error handling.
+    
+
+---
+
+**72. What is MVC architecture and how does it apply to MERN?**
+
+- **Model**: MongoDB schema
+    
+- **View**: React UI
+    
+- **Controller**: Express logic handling data between frontend and database
+    
+
+---
+
+**73. How would you manage large forms and complex state in React?**
+
+- Use `useReducer` or libraries like Formik or React Hook Form
+    
+- Combine with `Yup` for validation
+    
+- Break form into multiple steps/components
+    
+
+---
+
+**74. How would you implement server-side rendering (SSR) in a MERN app?**  
+Use **Next.js** (React framework) for SSR and better SEO. Backend API remains Express or can use API routes from Next.js itself.
+
+---
+
+**75. How do you manage application configuration across environments?**  
+Use `.env` files with libraries like `dotenv`. Keep separate files for dev, staging, and prod. Never hardcode secrets.
+
+---
+
+**76. What are microservices and can you build them with MERN?**  
+Yes. You can separate services (Auth, Payments, User) using Express.js APIs connected via REST or message queues like RabbitMQ/NATS.
+
+---
+
+### 📦 Advanced React Concepts
+
+**77. How do you implement code splitting in React?**  
+Using `React.lazy` and `Suspense`:
+
+js
+
+CopyEdit
+
+`const LazyComponent = React.lazy(() => import('./Component'));`
+
+---
+
+**78. What is reconciliation in React?**  
+It’s the process React uses to compare the virtual DOM with a previous version and efficiently update the UI.
+
+---
+
+**79. Explain React Fiber.**  
+React Fiber is the underlying engine for rendering. It allows incremental rendering and prioritization of tasks.
+
+---
+
+**80. How would you implement infinite scroll in React?**  
+Use `IntersectionObserver` or scroll listeners to detect when the user reaches the bottom and then fetch more data.
+
+---
+
+**81. What is React Portal?**  
+A way to render children into a DOM node outside the parent hierarchy. Useful for modals and tooltips.
+
+---
+
+### 🚀 Backend Architecture
+
+**82. How would you implement rate limiting in Express?**  
+Use `express-rate-limit` middleware:
+
+js
+
+CopyEdit
+
+`const rateLimit = require('express-rate-limit'); app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));`
+
+---
+
+**83. How do you implement logging in a production backend?**  
+Use `winston` or `morgan` for structured logging. Logs can be saved to files or external services like Logstash or Sentry.
+
+---
+
+**84. How do you implement error handling in Express?**  
+Create a global error handler middleware:
+
+js
+
+CopyEdit
+
+`app.use((err, req, res, next) => {   res.status(err.status || 500).json({ error: err.message }); });`
+
+---
+
+**85. How would you implement file uploads securely?**  
+Use `multer`, validate file types/extensions, and upload to cloud storage like S3 or Cloudinary. Always check file size limits.
+
+---
+
+**86. How to implement email verification in a MERN app?**
+
+- Generate token using `jsonwebtoken`
+    
+- Send email with token link
+    
+- Create a verification route that checks token and activates the account
+    
+
+---
+
+### 🌿 MongoDB Advanced
+
+**87. How would you design a schema for blog posts with comments?**  
+Embed small comments or reference them in a separate collection with `ObjectId`. Depends on read vs write trade-offs.
+
+---
+
+**88. What are MongoDB transactions?**  
+Used to perform multiple operations atomically across collections in replica sets (added in MongoDB 4.0+).
+
+---
+
+**89. How to improve MongoDB query performance?**
+
+- Use indexes
+    
+- Analyze queries with `.explain()`
+    
+- Avoid `$where` or regex without anchors
+    
+- Limit document size and nesting
+    
+
+---
+
+**90. What are capped collections?**  
+Fixed-size collections that auto-delete oldest entries. Used in logging, event streaming, etc.
+
+---
+
+### 🔐 Security & Auth
+
+**91. How would you secure an Express API?**
+
+- Use HTTPS
+    
+- Sanitize inputs (e.g., `express-validator`)
+    
+- Prevent XSS, CSRF
+    
+- Rate limiting
+    
+- Helmet middleware
+    
+
+---
+
+**92. How do you implement role-based access control (RBAC)?**
+
+- Store user role in JWT or DB
+    
+- Check role in middleware before allowing access to protected routes
+    
+
+---
+
+**93. How do you protect MongoDB from injection attacks?**  
+Use Mongoose or MongoDB driver’s query objects—**never interpolate user input** directly into queries.
+
+---
+
+### 🧪 Testing & CI/CD
+
+**94. How do you test a MERN stack app?**
+
+- **React**: Jest + React Testing Library
+    
+- **Backend**: Mocha, Chai, or Jest + Supertest
+    
+- Use mocks, spies, integration tests
+    
+
+---
+
+**95. How do you set up CI/CD for a MERN stack app?**
+
+- Use GitHub Actions or Jenkins
+    
+- Run test scripts
+    
+- Deploy to servers (Render, Heroku, EC2, Vercel for frontend)
+    
+
+---
+
+**96. How to deploy a MERN stack app to production?**
+
+- Host frontend (React) on Vercel, Netlify, or static S3
+    
+- Host backend (Express) on Render, Heroku, EC2, or Railway
+    
+- Connect MongoDB via Atlas
+    
+- Use a reverse proxy (e.g., Nginx) if self-hosted
+    
+
+---
+
+**97. How do you handle application logging and monitoring?**  
+Use tools like:
+
+- Winston for logs
+    
+- Sentry for errors
+    
+- Prometheus + Grafana for metrics
+    
+
+---
+
+### ⚙️ Performance & Optimization
+
+**98. What is lazy loading and how does it help in performance?**  
+Delays loading of components/images until they are needed, reducing initial bundle size and improving speed.
+
+---
+
+**99. How do you cache API responses in Express?**
+
+- Use memory caching with `node-cache` or Redis
+    
+- Implement HTTP caching headers
+    
+- Example:
+    
+
+js
+
+CopyEdit
+
+`res.set('Cache-Control', 'public, max-age=300');`
+
+---
+
+**100. How would you handle large traffic spikes in a MERN app?**
+
+- Use load balancers
+    
+- Scale backend with Docker/Kubernetes
+    
+- Use CDN for frontend
+    
+- Optimize DB queries and indexes
+    
+- Cache static and repeated data
+    
+
+---
