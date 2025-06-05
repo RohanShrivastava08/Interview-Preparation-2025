@@ -718,15 +718,32 @@ CopyEdit
 
 ### ✅ **Covered Topics:**
 
-|Area|Subtopics|
+| Area                        | Subtopics                                                   |
+| --------------------------- | ----------------------------------------------------------- |
+| **Basics & Core**           | Variables, Hoisting, Scope, `this`, Coercion, Data Types    |
+| **Functions**               | Declarations, Expressions, Closures, IIFE, Arrow Functions  |
+| **Advanced Concepts**       | Prototypes, Inheritance, Context Binding, Execution Context |
+| **Async JS**                | Event Loop, Promises, Async/Await, Microtasks vs Macrotasks |
+| **ES6+ & Modern JS**        | `let/const`, Spread/Rest, Destructuring, Modules, Maps/Sets |
+| **Objects & Arrays**        | Methods, Destructuring, Cloning, References, Iteration      |
+| **Tricky Edge Cases**       | `NaN`, `[] + []`, `==` vs `===`, Deletion, Type Conversion  |
+| **Error Handling**          | `try/catch`, Errors in async code                           |
+| **Memory & Performance**    | Garbage Collection, WeakMap, Memoization                    |
+| **Operators & Expressions** | Ternary, Logical, Nullish, Optional Chaining                |
+
+---
+---
+
+### ✅ **Why the Above 115 Questions Are Perfect for Freshers:**
+
+|Strength|Explanation|
 |---|---|
-|**Basics & Core**|Variables, Hoisting, Scope, `this`, Coercion, Data Types|
-|**Functions**|Declarations, Expressions, Closures, IIFE, Arrow Functions|
-|**Advanced Concepts**|Prototypes, Inheritance, Context Binding, Execution Context|
-|**Async JS**|Event Loop, Promises, Async/Await, Microtasks vs Macrotasks|
-|**ES6+ & Modern JS**|`let/const`, Spread/Rest, Destructuring, Modules, Maps/Sets|
-|**Objects & Arrays**|Methods, Destructuring, Cloning, References, Iteration|
-|**Tricky Edge Cases**|`NaN`, `[] + []`, `==` vs `===`, Deletion, Type Conversion|
-|**Error Handling**|`try/catch`, Errors in async code|
-|**Memory & Performance**|Garbage Collection, WeakMap, Memoization|
-|**Operators & Expressions**|Ternary, Logical, Nullish, Optional Chaining|
+|🔍 **Covers All Fundamentals**|Variables, scope, hoisting, coercion, data types — all essential for fresher rounds.|
+|🧠 **Deep Understanding of Functions & Closures**|Most fresher questions revolve around these — well explained.|
+|🔁 **Good Grasp of Async JS**|Event loop, promises, `async/await` — increasingly asked in 2025, even for interns & freshers.|
+|🚀 **Includes ES6+ and Modern JS**|Most companies expect knowledge of ES6+ (`let/const`, arrow functions, destructuring, etc).|
+|❓ **Tricky & Conceptual Questions**|Type coercion, `==` vs `===`, object references — helps you stand out with clarity.|
+|💥 **Real Interview-Style Answers**|Each answer is structured the way you'd explain in a real interview.|
+
+---
+---
