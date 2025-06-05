@@ -711,3 +711,22 @@ CopyEdit
     
 
 > Yes, but it’s **strongly discouraged** due to maintenance and compatibility issues.
+
+
+---
+---
+
+### ✅ **Covered Topics:**
+
+|Area|Subtopics|
+|---|---|
+|**Basics & Core**|Variables, Hoisting, Scope, `this`, Coercion, Data Types|
+|**Functions**|Declarations, Expressions, Closures, IIFE, Arrow Functions|
+|**Advanced Concepts**|Prototypes, Inheritance, Context Binding, Execution Context|
+|**Async JS**|Event Loop, Promises, Async/Await, Microtasks vs Macrotasks|
+|**ES6+ & Modern JS**|`let/const`, Spread/Rest, Destructuring, Modules, Maps/Sets|
+|**Objects & Arrays**|Methods, Destructuring, Cloning, References, Iteration|
+|**Tricky Edge Cases**|`NaN`, `[] + []`, `==` vs `===`, Deletion, Type Conversion|
+|**Error Handling**|`try/catch`, Errors in async code|
+|**Memory & Performance**|Garbage Collection, WeakMap, Memoization|
+|**Operators & Expressions**|Ternary, Logical, Nullish, Optional Chaining|
