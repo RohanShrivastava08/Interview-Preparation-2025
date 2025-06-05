@@ -332,3 +332,382 @@ Categorized into: Basics, Functions, Scopes & Closures, Objects & Arrays, Advanc
     CopyEdit
     
     `const { name = 'Guest' } = user;`
+
+## 🧩 **Section 4: Asynchronous JavaScript (Q61–Q80)**
+
+61. **What is asynchronous JavaScript?**
+    
+
+> Code that doesn't block execution. JS uses callbacks, promises, and `async/await` to handle async operations like API calls, timers, etc.
+
+62. **What is a callback?**
+    
+
+> A function passed into another function to be executed later.
+
+63. **What are Promises in JavaScript?**
+    
+
+> An object representing the eventual completion (or failure) of an async operation.
+
+js
+
+CopyEdit
+
+`const p = new Promise((resolve, reject) => {   resolve('Success'); });`
+
+64. **What are the states of a Promise?**
+    
+
+- `pending`
+    
+- `fulfilled`
+    
+- `rejected`
+    
+
+65. **What is `.then()` and `.catch()`?**
+    
+
+> `.then()` handles success, `.catch()` handles failure.
+
+66. **What is `finally()` in promises?**
+    
+
+> Executes regardless of success or failure.
+
+js
+
+CopyEdit
+
+`promise.then().catch().finally(() => console.log('Done'));`
+
+67. **What is async/await?**
+    
+
+> Syntax sugar over Promises to write async code like synchronous code.
+
+js
+
+CopyEdit
+
+`async function fetchData() {   const data = await fetch('url'); }`
+
+68. **What is the event loop in JavaScript?**
+    
+
+> A mechanism that allows JS to perform non-blocking I/O by offloading tasks and waiting for results via a queue.
+
+69. **What is the microtask queue?**
+    
+
+> Queue for promises (`.then`, `await`) — executes before macrotasks (e.g., `setTimeout`).
+
+70. **Difference between microtasks and macrotasks?**
+    
+
+- **Microtasks:** Promises, `queueMicrotask`
+    
+- **Macrotasks:** `setTimeout`, `setInterval`, DOM events
+    
+
+71. **What is callback hell and how to avoid it?**
+    
+
+> Nested callbacks leading to unreadable code. Avoid using Promises or `async/await`.
+
+72. **What is the purpose of `Promise.all()`?**
+    
+
+> Runs multiple promises in parallel and waits for all to resolve or any to reject.
+
+73. **What is `Promise.race()`?**
+    
+
+> Resolves/rejects as soon as the **first** promise resolves/rejects.
+
+74. **What is `Promise.any()`?**
+    
+
+> Resolves as soon as **any one** of the promises fulfills (ignores rejections).
+
+75. **What is `Promise.allSettled()`?**
+    
+
+> Waits for **all promises to settle** (either fulfilled or rejected).
+
+76. **Can async functions run in parallel?**
+    
+
+> Yes, if you use `Promise.all()` to initiate them concurrently.
+
+77. **How does `await` work internally?**
+    
+
+> Pauses function execution and resumes it when the awaited promise resolves.
+
+78. **What happens if `await` is used outside an async function?**
+    
+
+> Syntax error — must be inside an `async` function.
+
+79. **Can you make a synchronous function wait?**
+    
+
+> Not directly — JS is single-threaded. Use Promises or async/await instead.
+
+80. **How do you handle errors in async/await?**
+    
+
+js
+
+CopyEdit
+
+`try {   const res = await fetch('url'); } catch (err) {   console.error(err); }`
+
+---
+
+## 💎 **Section 5: ES6+ and Modern JS Features (Q81–Q95)**
+
+81. **What’s new in ES6?**
+    
+
+> `let`, `const`, arrow functions, template literals, destructuring, rest/spread, classes, promises, modules.
+
+82. **What are ES modules and how are they imported/exported?**
+    
+
+js
+
+CopyEdit
+
+`// file.js export const name = "Rohan";  // main.js import { name } from './file.js';`
+
+83. **What are sets and maps?**
+    
+
+- `Set`: stores unique values
+    
+- `Map`: key-value pairs with any type as key
+    
+
+84. **Difference between `Map` and `Object`?**
+    
+
+> `Map` allows any keys, maintains insertion order, and has better performance with frequent additions/removals.
+
+85. **What is optional chaining (`?.`) used for?**
+    
+
+> To safely access deeply nested properties without error.
+
+js
+
+CopyEdit
+
+`user?.address?.city`
+
+86. **What is the nullish coalescing operator (`??`)?**
+    
+
+> Returns right-hand operand **only if** left is `null` or `undefined`.
+
+js
+
+CopyEdit
+
+`let name = userInput ?? "Guest";`
+
+87. **What is destructuring in function parameters?**
+    
+
+js
+
+CopyEdit
+
+`function greet({name, age}) {   console.log(name); }`
+
+88. **What is dynamic import?**
+    
+
+> ES2020 feature to lazy-load modules.
+
+js
+
+CopyEdit
+
+`const module = await import('./utils.js');`
+
+89. **What is BigInt?**
+    
+
+> A numeric primitive that can represent integers with arbitrary precision.
+
+js
+
+CopyEdit
+
+`const big = 123n;`
+
+90. **What are WeakMap and WeakSet?**
+    
+
+> Like Map/Set but keys are weakly referenced (not prevented from garbage collection).
+
+91. **What is a tagged template literal?**
+    
+
+js
+
+CopyEdit
+
+``function tag(strings, ...values) {   // Custom processing } tag`Hello ${name}`;``
+
+92. **What is the use of `Symbol.iterator`?**
+    
+
+> Makes objects iterable in `for...of` loops.
+
+93. **What is tail call optimization?**
+    
+
+> A way to optimize recursive calls. Not widely supported yet in all JS engines.
+
+94. **What is `Object.fromEntries()`?**
+    
+
+js
+
+CopyEdit
+
+`Object.fromEntries([['name', 'Rohan']]); // {name: 'Rohan'}`
+
+95. **How do you make a function parameter required in ES6?**
+    
+
+js
+
+CopyEdit
+
+`function foo(x = throw new Error("x is required")) {}`
+
+---
+
+## ⚠️ **Section 6: Tricky / Edge Case JS Questions (Q96–Q115)**
+
+96. **What’s the result of `[] + []`?**
+    
+
+> `""` — Both arrays converted to strings, then concatenated.
+
+97. **What’s the result of `{} + []`?**
+    
+
+> `'[object Object]'` — confusing due to parsing ambiguity.
+
+98. **What is the output of `typeof null`?**
+    
+
+> `'object'` — a bug in JS.
+
+99. **Can you reassign `const` objects?**
+    
+
+> You can mutate them, but not reassign:
+
+js
+
+CopyEdit
+
+`const obj = {}; obj.name = 'Rohan'; // ✅ obj = {}; // ❌`
+
+100. **What is the output of `[1,2,3] == [1,2,3]`?**
+    
+
+> `false` — arrays are reference types.
+
+101. **What is the result of `false == '0'`?**
+    
+
+> `true` — type coercion
+
+102. **What is the result of `true + false`?**
+    
+
+> `1` — `true` is 1, `false` is 0
+
+103. **What does `delete obj.prop` do?**
+    
+
+> Removes the property from object if configurable.
+
+104. **What happens if you use `new` with an arrow function?**
+    
+
+> Throws error — arrow functions are not constructible.
+
+105. **What’s the difference between `Object.seal()` and `Object.freeze()`?**
+    
+
+- `seal`: can't add/remove props, but can modify
+    
+- `freeze`: can’t modify anything
+    
+
+106. **What is the result of `typeof function(){} instanceof Function`?**
+    
+
+> `true`
+
+107. **How can you delay execution in JS?**
+    
+
+js
+
+CopyEdit
+
+`setTimeout(() => console.log("Hello"), 1000);`
+
+108. **What does `[].length = 0` do?**
+    
+
+> Empties the array.
+
+109. **What happens when you do `Math.max()` with no arguments?**
+    
+
+> Returns `-Infinity`
+
+110. **What’s the result of `NaN === NaN`?**
+    
+
+> `false`
+
+111. **How to check if value is really NaN?**
+    
+
+js
+
+CopyEdit
+
+`Number.isNaN(value)`
+
+112. **Can object keys be numbers?**
+    
+
+> Technically yes, but they get coerced to strings.
+
+113. **What’s the output of `typeof undefined == typeof NULL`?**
+    
+
+> `ReferenceError` — NULL is undefined (uppercase).
+
+114. **What is function memoization?**
+    
+
+> Caching results of function calls to improve performance.
+
+115. **Can you override native prototypes? Should you?**
+    
+
+> Yes, but it’s **strongly discouraged** due to maintenance and compatibility issues.
