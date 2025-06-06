@@ -587,3 +587,92 @@
 
 > Service workers act as a proxy between the web application and the network, enabling features like offline caching, background sync, and push notifications, thereby improving performance and reliability.
 
+## TypeScript for Frontend
+
+### 91. How do you handle optional props in TypeScript React components?
+
+> You use the `?` symbol in the prop definition to mark it optional. For example:
+
+tsx
+
+CopyEdit
+
+`interface Props {     name: string;     age?: number; // optional prop  }`  
+
+### 92. What is a Type Assertion in TypeScript?
+
+> Type assertion tells the compiler to treat a variable as a specific type, using syntax like `<Type>value` or `value as Type`. It’s useful when you know more about the variable’s type than TypeScript.
+
+### 93. How can you enforce strict typing on event handlers in React with TypeScript?
+
+> You can type event parameters using React’s built-in types, e.g.,
+
+tsx
+
+CopyEdit
+
+`const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => { ... };`
+
+---
+
+## CSS Frameworks (Tailwind, Bootstrap)
+
+### 94. How does Tailwind CSS approach styling differently than traditional CSS?
+
+> Tailwind uses utility classes directly in HTML for styling instead of writing separate CSS files, allowing rapid, component-focused styling without context switching.
+
+### 95. How can you customize Tailwind CSS?
+
+> By editing the `tailwind.config.js` file, you can add or override colors, spacing, fonts, and plugins to tailor Tailwind to your design system.
+
+### 96. What are Bootstrap grid breakpoints?
+
+> Bootstrap grid uses breakpoints like `xs` (extra small), `sm` (small), `md` (medium), `lg` (large), and `xl` (extra large) to create responsive layouts.
+
+---
+
+## Next.js & SSR Concepts
+
+### 97. What is the difference between `getStaticProps` and `getServerSideProps` in Next.js?
+
+> `getStaticProps` generates static HTML at build time, great for pages that don’t change often. `getServerSideProps` runs on each request to generate fresh HTML, useful for dynamic data.
+
+### 98. How does Next.js handle routing?
+
+> Next.js uses a file-based routing system where files inside the `pages` directory automatically become routes.
+
+### 99. What is Incremental Static Regeneration (ISR) in Next.js?
+
+> ISR lets you update static content after build time by revalidating pages in the background at runtime, combining benefits of SSG and SSR.
+
+---
+
+## Testing with Jest & React Testing Library
+
+### 100. How do you mock API calls in Jest tests?
+
+> You can use `jest.mock()` to mock modules or libraries, or use libraries like `msw` (Mock Service Worker) to mock HTTP requests for more realistic tests.
+
+### 101. What is snapshot testing in Jest?
+
+> Snapshot testing captures the rendered output of a component and compares it with a stored snapshot file to detect unintended UI changes.
+
+### 102. How do you test asynchronous code with Jest?
+
+> Use `async/await` in tests and utilities like `waitFor` from React Testing Library to wait for async state updates before assertions.
+
+---
+
+## UI/UX and Design Thinking Basics
+
+### 103. What is user persona in UX design?
+
+> A user persona is a fictional character representing a typical user, helping teams design for user needs and behaviors.
+
+### 104. What does “mobile-first design” mean?
+
+> It means designing the user interface starting with the smallest screen size (mobile) and progressively enhancing it for larger screens.
+
+### 105. How do you improve usability on forms?
+
+> Use clear labels, group related fields, provide inline validation feedback, and ensure keyboard accessibility.
