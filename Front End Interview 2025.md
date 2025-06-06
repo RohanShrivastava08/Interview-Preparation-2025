@@ -434,3 +434,156 @@
 ### 70. **How do service workers enhance PWA functionality?**
 
 > Service workers act as a proxy between the web application and the network, enabling features like offline caching, background sync, and push notifications, thereby improving performance and reliability.
+
+## ⚛️ React & Component Architecture
+
+### 71. **What is the Virtual DOM, and how does React use it?**
+
+> The Virtual DOM is a lightweight JavaScript representation of the actual DOM. React uses it to optimize UI rendering by updating only the parts of the DOM that have changed, enhancing performance.
+
+### 72. **Differentiate between Class and Functional Components in React.**
+
+> Class components are ES6 classes extending `React.Component` with lifecycle methods. Functional components are plain JavaScript functions that can use hooks to manage state and side effects. Functional components are now preferred due to their simplicity and performance benefits.
+
+### 73. **What are React Hooks? Name a few commonly used ones.**
+
+> Hooks are functions that let you use state and other React features in functional components. Common hooks include `useState`, `useEffect`, `useContext`, `useReducer`, and `useMemo`.
+
+### 74. **Explain the purpose of `useEffect` hook.**
+
+> `useEffect` allows you to perform side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM. It runs after the render and can be configured to run on specific state or prop changes.
+
+### 75. **What is the significance of keys in React lists?**
+
+> Keys help React identify which items have changed, are added, or are removed. They should be unique and stable to ensure efficient re-rendering of list items.
+
+---
+
+## 🚀 Performance Optimization
+
+### 76. **How can you optimize React application performance?**
+
+> - Use React's `PureComponent` or `React.memo` to prevent unnecessary re-renders.
+>     
+> - Implement code-splitting using dynamic `import()` and React.lazy.
+>     
+> - Utilize virtualization for long lists with libraries like `react-window`.
+>     
+> - Avoid inline functions and objects in render methods.
+>     
+> - Debounce or throttle expensive operations.
+>     
+
+### 77. **What is code-splitting, and why is it important?**
+
+> Code-splitting is the practice of breaking up your code into smaller chunks that can be loaded on demand. It improves initial load time and performance by loading only the necessary code for the current view.
+
+### 78. **Explain lazy loading in React.**
+
+> Lazy loading is a technique where components or resources are loaded only when needed. In React, `React.lazy()` and `Suspense` are used to load components lazily, enhancing performance by reducing the initial bundle size.
+
+---
+
+## ♿ Accessibility (a11y)
+
+### 79. **What are ARIA roles, and how do they enhance accessibility?**
+
+> ARIA (Accessible Rich Internet Applications) roles provide additional information to assistive technologies about the purpose of elements, improving accessibility for users with disabilities.
+
+### 80. **How do you ensure keyboard accessibility in web applications?**
+
+> - Ensure all interactive elements are focusable using `tabindex`.
+>     
+> - Use semantic HTML elements like `<button>`, `<a>`, and `<input>`.
+>     
+> - Manage focus states and visible indicators.
+>     
+> - Implement keyboard event handlers for custom components.
+>     
+
+---
+
+## 🧪 Testing & Debugging
+
+### 81. **What is the difference between unit testing and integration testing?**
+
+> - Unit testing focuses on individual components or functions in isolation.
+>     
+> - Integration testing verifies the interaction between different components or modules to ensure they work together as expected.
+>     
+
+### 82. **Which tools are commonly used for testing React applications?**
+
+> - Jest: A JavaScript testing framework for unit and integration tests.
+>     
+> - React Testing Library: For testing React components by simulating user interactions.
+>     
+> - Enzyme (less common now): For shallow rendering and component testing.
+>     
+
+---
+
+## 🔐 Security Best Practices
+
+### 83.**What is Cross-Site Scripting (XSS), and how can you prevent it?**
+
+> XSS is a security vulnerability where attackers inject malicious scripts into web pages viewed by others. Prevention includes:
+> 
+> - Escaping user input.
+>     
+> - Validating and sanitizing inputs.
+>     
+> - Using Content Security Policy (CSP) headers.
+>     
+
+### 84.**Explain the concept of Cross-Origin Resource Sharing (CORS).**
+
+> CORS is a security feature implemented by browsers to restrict web pages from making requests to a different domain than the one that served the web page. Servers can enable CORS by setting appropriate headers to allow cross-origin requests.
+
+---
+
+## 🧰 Tooling & Build Processes
+
+### 85. **What is Webpack, and why is it used in frontend development?**
+
+> Webpack is a module bundler that compiles JavaScript modules and other assets into a single bundle or multiple bundles, optimizing them for deployment. It handles dependencies, code splitting, and asset management.
+
+### 86. **What is Babel, and how does it work?**
+
+> Babel is a JavaScript compiler that converts modern JavaScript (ES6+) into backward-compatible versions for older browsers. It uses plugins and presets to transform code syntax.
+
+---
+
+## 🧩 Design Patterns & Architecture
+
+### 87. **What is the Flux architecture, and how does Redux implement it?**
+
+> Flux is a unidirectional data flow architecture where data flows from actions to dispatcher to stores and then to views. Redux implements Flux by providing a single store, pure reducer functions, and actions to manage state changes predictably.
+
+### 88. **Explain the concept of Higher-Order Components (HOC) in React.**
+
+> An HOC is a function that takes a component and returns a new component with enhanced behavior. It's used for code reuse, logic abstraction, and manipulating props.
+
+---
+
+## 🌐 Progressive Web Apps (PWA)
+
+### 89. **What are Progressive Web Apps, and what are their key features?**
+
+> PWAs are web applications that provide a native app-like experience. Key features include:
+> 
+> - Responsive design.
+>     
+> - Offline capabilities via service workers.
+>     
+> - Installable on devices.
+>     
+> - Push notifications.
+>     
+> - Fast loading and performance.[naukri.com](https://www.naukri.com/code360/library/full-stack--developer-interview-questions?utm_source=chatgpt.com)
+>     
+
+### 90. **How do service workers enhance PWA functionality?**
+
+> Service workers act as a proxy between the web application and the network, enabling features like offline caching, background sync, and push notifications, thereby improving performance and reliability.
+
