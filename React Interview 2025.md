@@ -64,3 +64,28 @@
 
 > `useEffect` runs **after the render is committed** to the screen, while `useLayoutEffect` runs **before painting**. Use the latter for measuring DOM elements.
 
+## 🔹 Section 4: Lifecycle & Events (Q51–Q65)
+
+### 51. What are lifecycle methods in class components?
+
+> Common ones:
+
+- `componentDidMount()`
+    
+- `componentDidUpdate()`
+    
+- `componentWillUnmount()`
+    
+
+### 52. What is the equivalent of `componentDidMount` in hooks?
+
+> `useEffect(() => { ... }, [])`
+
+### 53. How do you handle events in React?
+
+> By passing functions like `onClick={() => ...}` or `onChange={handleChange}` to JSX elements.
+
+### 54. What are synthetic events?
+
+> React uses **synthetic events**, a wrapper around native events, for cross-browser compatibility.
+
