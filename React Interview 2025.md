@@ -19,3 +19,26 @@
 ### 5. What is the Virtual DOM?
 
 > The virtual DOM is a **lightweight copy of the real DOM**. React uses it to optimize rendering by updating only changed elements.
+
+## 🔹 Section 2: Props and State (Q16–Q30)
+
+### 16. What are props in React?
+
+> Props (short for **properties**) are used to **pass data** from a parent to child components. Props are **read-only**.
+
+### 17. What is state in React?
+
+> State is **data that changes over time** and determines a component’s behavior and rendering. Managed using `useState` in functional components.
+
+### 18. Can you modify props in a child component?
+
+> ❌ No, props are immutable. You should pass a callback function to the child if it needs to communicate back.
+
+### 19. How do you update the state in React?
+
+> By using the `setState` method in class components or the `setStateFunction` returned by `useState` in functional components.
+
+### 20. What happens when you update the state in React?
+
+> React **schedules a re-render** of the component and **updates the virtual DOM** accordingly.
+
