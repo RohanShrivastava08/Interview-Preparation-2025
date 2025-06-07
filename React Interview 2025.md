@@ -124,3 +124,50 @@
 > **Controlled**: Form inputs controlled by React state.  
 > **Uncontrolled**: Accessed via refs (`useRef`), not state.
 
+## 🔹 Section 8: Context and State Management (Q81–Q90)
+
+### 81. What is Context API in React?
+
+> A way to pass data deeply through the component tree **without props drilling**.
+
+### 82. When would you use Context?
+
+> For global state like theme, user authentication, language preferences.
+
+### 83. What is Redux?
+
+> Redux is a **state management library**. It uses a single global state and dispatchable actions to update the state.
+
+---
+
+## 🔹 Section 9: Performance Optimization (Q91–Q100)
+
+### 91. What is memoization in React?
+
+> Techniques like `React.memo`, `useMemo`, and `useCallback` prevent **unnecessary re-renders**.
+
+### 92. When to use `React.memo`?
+
+> When you want to **memoize** a component so it doesn’t re-render unless props change.
+
+### 93. What is code splitting in React?
+
+> Using **dynamic `import()`** or tools like `React.lazy` to **load components on demand**.
+
+---
+
+## 🔹 Section 10: Routing & Next.js (Q101–Q110)
+
+### 101. What is React Router?
+
+> A popular library for handling **routing in React SPAs**, allowing navigation between pages/components.
+
+### 102. What is the difference between `<Link>` and `<a>` in React Router?
+
+> `<Link>` prevents full-page reloads and enables **client-side navigation**. `<a>` triggers a full page load.
+
+### 103. How do you define routes in React Router v6?
+
+
+`<Routes>     <Route path="/home" element={<Home />} />   </Routes>`
+
