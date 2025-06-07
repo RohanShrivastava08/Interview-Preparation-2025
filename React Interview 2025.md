@@ -171,3 +171,28 @@
 
 `<Routes>     <Route path="/home" element={<Home />} />   </Routes>`
 
+## 🔹 Section 11: Error Handling & Testing (Q111–Q115)
+
+### 111. What are Error Boundaries in React?
+
+> Special class components with `componentDidCatch()` used to **catch JavaScript errors in child components**.
+
+### 112. How do you test React components?
+
+> Use **Jest** with **React Testing Library** to test rendering, user interactions, and outputs.
+
+---
+
+## 🔹 Section 12: Miscellaneous (Q116–Q125)
+
+### 116. What is the difference between `useRef` and `createRef`?
+
+> `useRef` is for functional components, `createRef` is for class components. Both reference DOM elements or values without triggering re-renders.
+
+### 117. What is hydration in React?
+
+> The process of attaching event listeners to **server-rendered HTML** when using frameworks like Next.js.
+
+### 118. How do portals work in React?
+
+> With `ReactDOM.createPortal`, you can render components **outside the parent DOM hierarchy**, useful for modals, tooltips.
