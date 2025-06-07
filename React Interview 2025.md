@@ -89,3 +89,38 @@
 
 > React uses **synthetic events**, a wrapper around native events, for cross-browser compatibility.
 
+## 🔹 Section 5: Conditional Rendering (Q66–Q70)
+
+### 66. How do you render conditionally in React?
+
+> Using `if/else`, ternary `condition ? A : B`, logical AND `condition && <Component />`.
+
+### 67. Can you return null from a component?
+
+> ✅ Yes. Returning `null` renders nothing.
+
+---
+
+## 🔹 Section 6: Lists and Keys (Q71–Q75)
+
+### 71. How do you render a list in React?
+
+> Using `Array.map()` to loop over an array and return a component for each item.
+
+### 72. Why is `key` important in React lists?
+
+> Keys help React identify which items have changed, are added, or removed.
+
+---
+
+## 🔹 Section 7: Forms (Q76–Q80)
+
+### 76. How do you handle forms in React?
+
+> Use controlled components by binding form inputs to state.
+
+### 77. What are controlled vs uncontrolled components?
+
+> **Controlled**: Form inputs controlled by React state.  
+> **Uncontrolled**: Accessed via refs (`useRef`), not state.
+
