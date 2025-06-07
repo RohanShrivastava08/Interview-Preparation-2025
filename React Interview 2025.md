@@ -42,3 +42,25 @@
 
 > React **schedules a re-render** of the component and **updates the virtual DOM** accordingly.
 
+## 🔹 Section 3: Hooks (Q31–Q50)
+
+### 31. What are hooks in React?
+
+> Hooks are **functions** that let you use **state and lifecycle** features in functional components.
+
+### 32. Name some commonly used hooks.
+
+> `useState`, `useEffect`, `useRef`, `useContext`, `useMemo`, `useCallback`, `useReducer`.
+
+### 33. What is `useState`?
+
+> A hook that lets you add **state** to functional components.
+
+### 34. What is `useEffect`?
+
+> A hook for handling **side effects** like data fetching, subscriptions, or manually changing the DOM. Runs after render.
+
+### 35. Difference between `useEffect` and `useLayoutEffect`?
+
+> `useEffect` runs **after the render is committed** to the screen, while `useLayoutEffect` runs **before painting**. Use the latter for measuring DOM elements.
+
