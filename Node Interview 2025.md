@@ -814,3 +814,312 @@ A C library that provides Node.js with an event loop and asynchronous I/O.
 ### 90. **What is backpressure in streams?**
 
 When the writable stream cannot consume data as fast as it is being read, causing memory overflow if not managed.
+
+---
+---
+
+## 🔐 SECTION 5: Security, Authentication, Deployment & Best Practices (Q91–115)
+
+---
+
+### 91. **What is JWT (JSON Web Token)?**
+
+JWT is a compact, URL-safe way to represent claims between two parties. It is widely used for authentication.
+
+Structure:
+
+css
+
+CopyEdit
+
+`header.payload.signature`
+
+js
+
+CopyEdit
+
+`const jwt = require('jsonwebtoken'); const token = jwt.sign({ userId: 123 }, 'secretKey', { expiresIn: '1h' });`
+
+---
+
+### 92. **How to verify a JWT?**
+
+js
+
+CopyEdit
+
+`jwt.verify(token, 'secretKey', (err, decoded) => {   if (err) return res.sendStatus(403);   console.log(decoded); });`
+
+---
+
+### 93. **Where should JWT be stored on the client?**
+
+- Preferably in **HTTP-only cookies** (for security)
+    
+- Avoid storing in `localStorage` (vulnerable to XSS)
+    
+
+---
+
+### 94. **What is the difference between Authentication and Authorization?**
+
+|Term|Description|
+|---|---|
+|Authentication|Verifying identity (e.g., login)|
+|Authorization|Checking permissions (e.g., access to route)|
+
+---
+
+### 95. **What is Helmet and why use it?**
+
+Helmet is a middleware that sets secure HTTP headers to protect against common vulnerabilities like XSS, clickjacking, etc.
+
+js
+
+CopyEdit
+
+`const helmet = require('helmet'); app.use(helmet());`
+
+---
+
+### 96. **What are some common security threats in Node.js?**
+
+- XSS (Cross-Site Scripting)
+    
+- CSRF (Cross-Site Request Forgery)
+    
+- Injection attacks (e.g., MongoDB/SQL)
+    
+- DDoS (Denial of Service)
+    
+- Directory traversal
+    
+- Insecure cookies
+    
+
+---
+
+### 97. **How do you prevent NoSQL injection?**
+
+- Validate and sanitize inputs
+    
+- Use ORM/ODM safely (like Mongoose)
+    
+- Never use raw inputs directly in queries
+    
+
+---
+
+### 98. **How do you secure API routes in Express?**
+
+- Add **JWT authentication**
+    
+- Rate-limit requests
+    
+- Use HTTPS
+    
+- Validate inputs
+    
+- Sanitize outputs
+    
+
+---
+
+### 99. **How to hash passwords in Node.js?**
+
+Use `bcrypt`:
+
+js
+
+CopyEdit
+
+`const bcrypt = require('bcrypt'); const hashed = await bcrypt.hash('password123', 10); const valid = await bcrypt.compare('password123', hashed);`
+
+---
+
+### 100. **What is rate limiting and how to implement it?**
+
+Prevents brute-force and abuse by limiting requests per IP.
+
+js
+
+CopyEdit
+
+`const rateLimit = require('express-rate-limit'); app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));`
+
+---
+
+### 101. **What is the best practice for environment configs in Node.js?**
+
+- Use `.env` for storing secrets
+    
+- Load with `dotenv`
+    
+- Do not commit `.env` to version control
+    
+
+---
+
+### 102. **What are some logging tools in Node.js?**
+
+- `console.log` (basic)
+    
+- `winston` (advanced, log levels, file output)
+    
+- `morgan` (HTTP request logger middleware)
+    
+
+---
+
+### 103. **How to deploy a Node.js app?**
+
+- **Local**: Run via `node` or `pm2`
+    
+- **Cloud**:
+    
+    - Heroku
+        
+    - Vercel (for serverless)
+        
+    - AWS EC2, Lambda
+        
+    - DigitalOcean
+        
+- Use CI/CD for automated deployment
+    
+
+---
+
+### 104. **How to use PM2 in production?**
+
+bash
+
+CopyEdit
+
+`npm install -g pm2 pm2 start app.js pm2 restart app pm2 logs`
+
+PM2 ensures your app runs in the background and restarts on failure or reboot.
+
+---
+
+### 105. **How to enable HTTPS in Node.js?**
+
+js
+
+CopyEdit
+
+`const https = require('https'); const fs = require('fs'); const options = {   key: fs.readFileSync('key.pem'),   cert: fs.readFileSync('cert.pem'), };  https.createServer(options, app).listen(443);`
+
+---
+
+### 106. **What is CORS and how to enable it?**
+
+Cross-Origin Resource Sharing (CORS) allows servers to specify who can access its resources.
+
+js
+
+CopyEdit
+
+`const cors = require('cors'); app.use(cors());`
+
+---
+
+### 107. **How to handle file uploads securely?**
+
+Use `multer`, restrict file types and sizes:
+
+js
+
+CopyEdit
+
+`const multer = require('multer'); const upload = multer({ dest: 'uploads/', limits: { fileSize: 1e6 } });`
+
+---
+
+### 108. **How to scale a Node.js app?**
+
+- Use clustering (`cluster` module)
+    
+- Use a load balancer (e.g., NGINX)
+    
+- Containerization with Docker
+    
+- Auto-scaling on cloud providers
+    
+
+---
+
+### 109. **What is the purpose of `.gitignore` in a Node.js project?**
+
+Prevents unwanted files (like `node_modules`, `.env`) from being pushed to Git.
+
+---
+
+### 110. **How to structure a scalable Node.js project?**
+
+Common structure:
+
+bash
+
+CopyEdit
+
+`/controllers /routes /models /services /middleware /utils`
+
+---
+
+### 111. **What is MVC in Node.js context?**
+
+MVC = Model (data) + View (UI) + Controller (logic)
+
+In Node.js (especially Express):
+
+- **Model**: Database layer (e.g., Mongoose)
+    
+- **View**: Templating engine (optional)
+    
+- **Controller**: Logic for routes
+    
+
+---
+
+### 112. **What are middleware best practices?**
+
+- Keep them modular
+    
+- Use `next()` wisely
+    
+- Avoid blocking code
+    
+- Use try-catch in async middlewares
+    
+- Centralize error handling
+    
+
+---
+
+### 113. **What is API versioning and how is it handled?**
+
+Helps manage breaking changes across app versions:
+
+js
+
+CopyEdit
+
+`app.use('/api/v1/users', userRoutesV1); app.use('/api/v2/users', userRoutesV2);`
+
+---
+
+### 114. **What are some best practices for REST API design?**
+
+- Use nouns for endpoints (`/users`)
+    
+- Use HTTP methods properly
+    
+- Return appropriate status codes
+    
+- Use pagination, filtering, and sorting
+    
+- Secure with authentication
+
+---
+---
