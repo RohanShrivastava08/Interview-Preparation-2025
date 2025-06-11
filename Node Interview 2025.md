@@ -151,3 +151,189 @@ It compiles JavaScript to optimized machine code, enabling fast execution.
 ### 20. **What is REPL in Node.js?**
 
 REPL stands for Read–Eval–Print–Loop, a command-line tool for running JavaScript interactively.
+
+---
+---
+
+## 🚀 SECTION 2: Express.js & REST APIs (Q21–40)
+
+### 21. **What is Express.js?**
+
+Express is a minimal and flexible Node.js web application framework that simplifies routing and middleware.
+
+---
+
+### 22. **How do you create a basic Express server?**
+
+js
+
+CopyEdit
+
+`const express = require('express'); const app = express(); app.get('/', (req, res) => res.send('Hello World!')); app.listen(3000);`
+
+---
+
+### 23. **What is middleware in Express?**
+
+Middleware are functions executed in sequence on request/response cycle. E.g., logging, auth, parsing JSON.
+
+---
+
+### 24. **What is body-parser?**
+
+`body-parser` parses incoming request bodies. Now built into Express via `express.json()` and `express.urlencoded()`.
+
+---
+
+### 25. **Difference between `res.send()` and `res.json()`?**
+
+- `res.send()`: Sends any type of response
+    
+- `res.json()`: Sends JSON with appropriate headers
+    
+
+---
+
+### 26. **How to define routes in Express?**
+
+js
+
+CopyEdit
+
+`app.get('/route', handler); app.post('/route', handler);`
+
+---
+
+### 27. **What is the use of `next()` in middleware?**
+
+It passes control to the next middleware function.
+
+---
+
+### 28. **What are route parameters in Express?**
+
+js
+
+CopyEdit
+
+`app.get('/user/:id', (req, res) => res.send(req.params.id));`
+
+---
+
+### 29. **How do you handle errors in Express?**
+
+Use an error-handling middleware:
+
+js
+
+CopyEdit
+
+`app.use((err, req, res, next) => {   res.status(500).send('Something broke!'); });`
+
+---
+
+### 30. **What is CORS and how do you enable it?**
+
+CORS allows cross-origin requests.
+
+js
+
+CopyEdit
+
+`const cors = require('cors'); app.use(cors());`
+
+---
+
+### 31. **How do you handle JSON request data in Express?**
+
+js
+
+CopyEdit
+
+`app.use(express.json());`
+
+---
+
+### 32. **What is the difference between PUT and PATCH?**
+
+- `PUT`: Replaces the entire resource
+    
+- `PATCH`: Updates part of the resource
+    
+
+---
+
+### 33. **What are status codes in HTTP?**
+
+- 200: OK
+    
+- 201: Created
+    
+- 400: Bad Request
+    
+- 401: Unauthorized
+    
+- 500: Internal Server Error
+    
+
+---
+
+### 34. **How do you redirect a route in Express?**
+
+js
+
+CopyEdit
+
+`res.redirect('/new-url');`
+
+---
+
+### 35. **How to serve static files in Express?**
+
+js
+
+CopyEdit
+
+`app.use(express.static('public'));`
+
+---
+
+### 36. **How do you read query parameters in Express?**
+
+js
+
+CopyEdit
+
+`req.query // { search: 'nodejs' }`
+
+---
+
+### 37. **What is helmet in Express?**
+
+`helmet` adds security headers to protect your app.
+
+---
+
+### 38. **What is morgan in Express?**
+
+`morgan` is an HTTP request logger middleware.
+
+---
+
+### 39. **How to send a file using Express?**
+
+js
+
+CopyEdit
+
+`res.sendFile(__dirname + '/file.pdf');`
+
+---
+
+### 40. **How to handle 404 in Express?**
+
+js
+
+CopyEdit
+
+`app.use((req, res) => res.status(404).send('Not Found'));`
