@@ -559,3 +559,258 @@ CopyEdit
 ---
 ---
 
+## ⚙️ SECTION 4: Intermediate & Performance Topics (Q61–90)
+
+---
+
+### 61. **How to handle uncaught exceptions?**
+
+js
+
+CopyEdit
+
+`process.on('uncaughtException', err => {   console.error('Unhandled Exception:', err); });`
+
+---
+
+### 62. **How to handle unhandled promise rejections?**
+
+js
+
+CopyEdit
+
+`process.on('unhandledRejection', err => {   console.error('Unhandled Rejection:', err); });`
+
+---
+
+### 63. **How to create a custom module?**
+
+js
+
+CopyEdit
+
+`// math.js module.exports.add = (a, b) => a + b;  // app.js const math = require('./math'); math.add(2, 3);`
+
+---
+
+### 64. **What is a cluster in Node.js?**
+
+`cluster` module allows creation of child processes (workers) to utilize multi-core systems.
+
+---
+
+### 65. **When should you use clustering?**
+
+For CPU-bound tasks or to improve throughput by balancing load across cores.
+
+---
+
+### 66. **What is the difference between fork and spawn in child_process?**
+
+- `fork`: Spawns a new Node.js process and can send messages
+    
+- `spawn`: Launches any new process
+    
+
+---
+
+### 67. **How to use `child_process` module?**
+
+js
+
+CopyEdit
+
+`const { exec } = require('child_process'); exec('ls', (err, stdout) => console.log(stdout));`
+
+---
+
+### 68. **How does Node handle asynchronous code under the hood?**
+
+Via libuv — which uses a thread pool, the event loop, and OS-level non-blocking I/O operations.
+
+---
+
+### 69. **What is `global` in Node.js?**
+
+It’s the global namespace object (like `window` in browsers).
+
+js
+
+CopyEdit
+
+`global.myVar = 5;`
+
+---
+
+### 70. **What are environment variables in Node.js?**
+
+Stored in `process.env`. Used to configure apps without hardcoding secrets or settings.
+
+---
+
+### 71. **How to load `.env` file values?**
+
+Use the `dotenv` package:
+
+js
+
+CopyEdit
+
+`require('dotenv').config(); console.log(process.env.API_KEY);`
+
+---
+
+### 72. **What are template engines?**
+
+They generate HTML pages dynamically. Examples:
+
+- EJS
+    
+- Pug
+    
+- Handlebars
+    
+
+---
+
+### 73. **What is the role of `res.locals` in Express?**
+
+Stores local variables scoped to the request, accessible in templates.
+
+---
+
+### 74. **What is a memory leak and how to avoid it in Node.js?**
+
+A memory leak occurs when objects are not garbage collected. Use tools like `clinic.js`, `heapdump`, and avoid holding large unused references.
+
+---
+
+### 75. **What is garbage collection in Node.js?**
+
+Automatic process by V8 that reclaims memory used by unreachable objects.
+
+---
+
+### 76. **How to debug a Node.js app?**
+
+- Use `node inspect` or `--inspect` flag
+    
+- Debug tools like VS Code debugger
+    
+- Use console logs or `debug` module
+    
+
+---
+
+### 77. **What are microservices in Node.js context?**
+
+Independent small services that interact via HTTP, message queues, or events. Ideal for scaling Node apps.
+
+---
+
+### 78. **How to measure performance of a Node.js app?**
+
+- Use built-in `console.time()`
+    
+- Use profiling tools like `clinic.js`, `node --prof`
+    
+
+---
+
+### 79. **What is middleware chaining?**
+
+The sequential execution of multiple middleware functions via `next()` in Express.
+
+---
+
+### 80. **What is an IIFE and why used in Node?**
+
+Immediately Invoked Function Expression to encapsulate variables:
+
+js
+
+CopyEdit
+
+`(function() {   // isolated scope })();`
+
+---
+
+### 81. **What is the default behavior of `require()`?**
+
+- Loads `.js`, `.json`, `.node` files
+    
+- Caches modules on first load
+    
+
+---
+
+### 82. **Can you use ES6 modules in Node?**
+
+Yes, via:
+
+- `"type": "module"` in `package.json`
+    
+- `.mjs` file extension
+    
+
+---
+
+### 83. **What is the difference between `exports` and `module.exports`?**
+
+Both export values, but `module.exports` is the actual object returned. `exports` is a shortcut:
+
+js
+
+CopyEdit
+
+`exports.hello = () => {} // Equivalent to: module.exports.hello = () => {}`
+
+---
+
+### 84. **How does Node.js handle file uploads?**
+
+Via packages like `multer` that parse `multipart/form-data`.
+
+---
+
+### 85. **What is rate limiting?**
+
+Restricting number of requests from a client in a time window to prevent abuse. Use `express-rate-limit`.
+
+---
+
+### 86. **What is throttling vs debouncing in Node.js context?**
+
+- **Throttling**: Limits how often a function is executed.
+    
+- **Debouncing**: Ensures a function is executed only after a certain delay.
+    
+
+---
+
+### 87. **How to prevent callback hell?**
+
+- Use Promises
+    
+- Use async/await
+    
+- Modularize code
+    
+
+---
+
+### 88. **What is the event queue?**
+
+Queue where async callbacks wait until the call stack is empty and event loop picks them.
+
+---
+
+### 89. **What is libuv?**
+
+A C library that provides Node.js with an event loop and asynchronous I/O.
+
+---
+
+### 90. **What is backpressure in streams?**
+
+When the writable stream cannot consume data as fast as it is being read, causing memory overflow if not managed.
