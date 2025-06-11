@@ -1,111 +1,153 @@
-## 🔰 **Beginner-Level Node.js Questions (1–60)**
+## 📘 SECTION 1: Core Node.js Fundamentals (Q1–20)
 
 ### 1. **What is Node.js?**
 
-Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside a browser. It’s built on Chrome's V8 engine and is designed for building scalable network applications.
+Node.js is an open-source, cross-platform JavaScript runtime built on Chrome's V8 engine. It allows JavaScript to run on the server, enabling backend development using JavaScript.
 
-### 2. **Why use Node.js?**
+---
 
-- Non-blocking I/O
+### 2. **Why is Node.js popular?**
+
+- Single-threaded, non-blocking architecture
     
-- Fast performance (V8 engine)
+- Uses JavaScript across the stack
     
-- Single programming language (JavaScript)
+- Fast I/O operations (thanks to V8)
     
-- Ideal for real-time applications
+- Scalable for I/O-intensive apps
     
-- Large ecosystem (npm)
+- Rich npm ecosystem
     
 
-### 3. **What is the V8 engine?**
+---
 
-V8 is Google’s open-source high-performance JavaScript engine used in Chrome and Node.js. It compiles JavaScript to native machine code before execution.
+### 3. **Is Node.js single-threaded? How does it handle concurrency?**
 
-### 4. **Is Node.js single-threaded?**
+Yes. Node.js uses an event loop and asynchronous I/O to handle many connections simultaneously without multiple threads.
 
-Yes, Node.js uses a single-threaded event loop architecture, but it can handle concurrent connections efficiently through non-blocking I/O.
+---
 
-### 5. **What is the difference between asynchronous and non-blocking in Node.js?**
+### 4. **What is the Event Loop?**
 
-- **Asynchronous**: Code runs independently and notifies when complete.
+The event loop is a continuous cycle that listens for and processes events (I/O, timers, etc.). It allows Node.js to perform non-blocking I/O on a single thread.
+
+---
+
+### 5. **What are Blocking vs Non-blocking calls?**
+
+- **Blocking**: Waits for an operation to complete before proceeding.
     
-- **Non-blocking**: Doesn’t block execution; tasks run in the background.
+- **Non-blocking**: Continues execution and handles result via callbacks or promises.
     
+
+---
 
 ### 6. **What is npm?**
 
-npm (Node Package Manager) is the default package manager for Node.js. It manages dependencies, installs packages, and allows sharing of reusable code.
+npm (Node Package Manager) manages dependencies, installs third-party libraries, and runs scripts in Node.js applications.
 
-### 7. **What is the purpose of package.json?**
+---
 
-It stores metadata about the project including scripts, dependencies, version, author, and entry point.
+### 7. **What is package.json?**
 
-### 8. **How do you install a package globally and locally in npm?**
+`package.json` defines metadata, dependencies, scripts, and entry points of a Node.js project.
 
-- **Globally**: `npm install -g package-name`
+---
+
+### 8. **Difference between `dependencies` and `devDependencies`?**
+
+- `dependencies`: Required in production
     
-- **Locally**: `npm install package-name`
-    
-
-### 9. **What is the difference between dependencies and devDependencies?**
-
-- `dependencies`: Required to run the app.
-    
-- `devDependencies`: Required only during development/testing.
+- `devDependencies`: Needed only for development (e.g., testing tools)
     
 
-### 10. **How do you initialize a Node.js project?**
+---
+
+### 9. **How to initialize a project using npm?**
 
 bash
 
 CopyEdit
 
-`npm init`
-### 11. **What is a callback function?**
+`npm init # or npm init -y`
 
-A function passed as an argument to another function, to be executed later.
+---
 
-### 12. **What are Promises?**
+### 10. **What is `require()` used for?**
 
-Objects representing the eventual completion (or failure) of an async operation.
+`require()` is a CommonJS function used to import modules.
 
-### 13. **What is async/await?**
+---
 
-Syntactic sugar over Promises, making asynchronous code look synchronous.
+### 11. **What is `module.exports`?**
 
-### 14. **Explain the Event Loop in Node.js.**
+It defines what a module exports and makes available for `require()` in another file.
 
-The Event Loop is a mechanism that allows Node.js to handle asynchronous tasks using callbacks, promises, etc., in a non-blocking way.
+---
 
-### 15. **What are streams in Node.js?**
+### 12. **Difference between `require` and `import`?**
 
-Streams are objects that allow reading or writing data piece by piece (streaming), useful for large files.
-
-### 16. **Types of streams?**
-
-- Readable
+- `require`: CommonJS (Node default)
     
-- Writable
-    
-- Duplex
-    
-- Transform
+- `import`: ES Module (used with `"type": "module"` in `package.json` or `.mjs` extension)
     
 
-### 17. **What are buffers in Node.js?**
+---
 
-Raw memory allocations used for binary data (e.g., file streams).
+### 13. **What is a callback function?**
 
-### 18. **What is the use of `require()`?**
+A callback is a function passed to another function, to be executed later (especially after async operations).
 
-It loads modules in Node.js using CommonJS.
+---
 
-### 19. **What is module.exports?**
+### 14. **What are Promises?**
 
-It allows you to export functions/objects from a module to be used elsewhere.
+A Promise is an object representing a value that may be available now, in the future, or never. It has three states: `pending`, `fulfilled`, `rejected`.
 
-### 20. **Difference between require and import?**
+---
 
-- `require`: CommonJS
+### 15. **What is async/await?**
+
+It’s syntax sugar over Promises to write async code in a synchronous style.
+
+js
+
+CopyEdit
+
+`async function getData() {   try {     const data = await fetchData();   } catch (err) {     console.error(err);   } }`
+
+---
+
+### 16. **What is a Buffer?**
+
+Buffer is a Node.js class to handle binary data directly in memory, useful when dealing with streams, files, etc.
+
+---
+
+### 17. **What are Streams in Node.js?**
+
+Streams are objects that let you read/write data piece-by-piece.
+
+- Types: Readable, Writable, Duplex, Transform
     
-- `import`: ES Modules (used with `.mjs` or `"type": "module"` in package.json)
+
+---
+
+### 18. **Difference between `setImmediate()` and `process.nextTick()`?**
+
+- `process.nextTick()`: Executes after the current operation ends, before the event loop continues.
+    
+- `setImmediate()`: Executes in the next iteration of the event loop.
+    
+
+---
+
+### 19. **How does the V8 engine help Node.js?**
+
+It compiles JavaScript to optimized machine code, enabling fast execution.
+
+---
+
+### 20. **What is REPL in Node.js?**
+
+REPL stands for Read–Eval–Print–Loop, a command-line tool for running JavaScript interactively.
