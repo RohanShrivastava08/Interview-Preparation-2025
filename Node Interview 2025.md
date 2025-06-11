@@ -341,3 +341,217 @@ CopyEdit
 ---
 ---
 
+## 📁 SECTION 3: File System, Events & Utilities (Q41–60)
+
+---
+
+### 41. **What is the `fs` module in Node.js?**
+
+The `fs` (File System) module allows you to work with the file system — reading, writing, updating, and deleting files.
+
+js
+
+CopyEdit
+
+`const fs = require('fs'); fs.readFile('file.txt', 'utf8', (err, data) => {   if (err) throw err;   console.log(data); });`
+
+---
+
+### 42. **Difference between synchronous and asynchronous file operations?**
+
+- **Sync**: Blocks execution until operation completes.
+    
+- **Async**: Non-blocking, uses callback or Promise.
+    
+
+js
+
+CopyEdit
+
+`fs.readFileSync() // Blocking fs.readFile()     // Non-blocking`
+
+---
+
+### 43. **How to write a file asynchronously?**
+
+js
+
+CopyEdit
+
+`fs.writeFile('output.txt', 'Hello!', err => {   if (err) throw err; });`
+
+---
+
+### 44. **How to append data to a file?**
+
+js
+
+CopyEdit
+
+`fs.appendFile('log.txt', 'New log\n', err => {   if (err) throw err; });`
+
+---
+
+### 45. **How to delete a file using Node.js?**
+
+js
+
+CopyEdit
+
+`fs.unlink('delete-me.txt', err => {   if (err) throw err; });`
+
+---
+
+### 46. **What are events in Node.js?**
+
+Node.js has an **EventEmitter** class that allows event-driven programming. You can emit and listen to events.
+
+---
+
+### 47. **How to use EventEmitter?**
+
+js
+
+CopyEdit
+
+`const EventEmitter = require('events'); const emitter = new EventEmitter();  emitter.on('start', () => console.log('Started')); emitter.emit('start');`
+
+---
+
+### 48. **What are some core Node.js events?**
+
+- `data` (streams)
+    
+- `end`
+    
+- `error`
+    
+- `connection` (servers)
+    
+- Custom events via `EventEmitter`
+    
+
+---
+
+### 49. **What is a stream?**
+
+Streams are used to handle large chunks of data efficiently by processing it in smaller pieces.
+
+---
+
+### 50. **Types of Streams in Node.js:**
+
+- **Readable**: Read data (e.g., `fs.createReadStream`)
+    
+- **Writable**: Write data
+    
+- **Duplex**: Both readable and writable
+    
+- **Transform**: Modify data while streaming
+    
+
+---
+
+### 51. **How to create a readable stream?**
+
+js
+
+CopyEdit
+
+`const rs = fs.createReadStream('file.txt'); rs.on('data', chunk => console.log(chunk));`
+
+---
+
+### 52. **How to pipe streams?**
+
+js
+
+CopyEdit
+
+`const rs = fs.createReadStream('file.txt'); const ws = fs.createWriteStream('copy.txt'); rs.pipe(ws);`
+
+---
+
+### 53. **What is `path` module?**
+
+`path` provides utilities to work with file and directory paths.
+
+js
+
+CopyEdit
+
+`const path = require('path'); console.log(path.basename('/dir/file.txt')); // file.txt`
+
+---
+
+### 54. **What is `os` module?**
+
+It provides info about the system — CPU, memory, hostname, platform.
+
+js
+
+CopyEdit
+
+`const os = require('os'); console.log(os.platform(), os.cpus().length);`
+
+---
+
+### 55. **How to create directories in Node.js?**
+
+js
+
+CopyEdit
+
+`fs.mkdir('newFolder', err => {   if (err) throw err; });`
+
+---
+
+### 56. **How to read all files in a directory?**
+
+js
+
+CopyEdit
+
+`fs.readdir('./folder', (err, files) => {   if (err) throw err;   console.log(files); });`
+
+---
+
+### 57. **What is `util.promisify`?**
+
+It converts callback-based functions into Promise-based ones.
+
+js
+
+CopyEdit
+
+`const util = require('util'); const readFile = util.promisify(fs.readFile);`
+
+---
+
+### 58. **What is `process` object?**
+
+Gives info and control over the current Node.js process.
+
+js
+
+CopyEdit
+
+`process.argv // CLI arguments process.env  // Environment variables process.exit() // Exit process`
+
+---
+
+### 59. **How to read command-line arguments?**
+
+js
+
+CopyEdit
+
+`console.log(process.argv); // ['node', 'app.js', 'arg1', 'arg2']`
+
+---
+
+### 60. **What is the difference between `__dirname` and `__filename`?**
+
+- `__dirname`: Directory of current module
+    
+- `__filename`: Full path of the current file
