@@ -555,3 +555,7 @@ CopyEdit
 - `__dirname`: Directory of current module
     
 - `__filename`: Full path of the current file
+
+---
+---
+
