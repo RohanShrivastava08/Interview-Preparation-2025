@@ -956,3 +956,7 @@ To restrict data based on conditions. Useful for role-based access in aggregatio
 - **One-to-Many**: Embed small arrays, reference large ones
     
 - **Many-to-Many**: Use reference arrays in both collections
+
+---
+---
+---
