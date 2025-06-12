@@ -658,3 +658,301 @@ Returns storage size, index info, and other metrics for a collection.
 - Index frequently queried fields
     
 - Avoid deeply nested documents
+
+---
+---
+
+## 🔧 Advanced & Real-World Questions (71–100)
+
+### 71. **What is MongoDB Atlas?**
+
+MongoDB Atlas is a fully managed cloud database service provided by MongoDB. It offers automatic backups, scaling, monitoring, and more across AWS, Azure, and GCP.
+
+---
+
+### 72. **Difference between embedded and referenced documents?**
+
+- **Embedded**: Store related data inside the same document (fast reads)
+    
+- **Referenced**: Store related data in different documents and reference them (normalized)
+    
+
+Use embedded for tight relationships, referenced for scalability.
+
+---
+
+### 73. **When should you use embedded documents over referenced ones?**
+
+Use embedded when:
+
+- Data is accessed together frequently
+    
+- Size is small
+    
+- No need to access embedded data independently
+    
+
+---
+
+### 74. **What is MongoDB Compass?**
+
+A GUI tool for MongoDB that allows you to visualize schema, run queries, manage indexes, and analyze performance metrics.
+
+---
+
+### 75. **What is a covered query?**
+
+A query that can be satisfied entirely using an index without reading documents. Improves performance.
+
+---
+
+### 76. **What is collation in MongoDB?**
+
+Collation allows you to specify language-specific rules for string comparison, like case or accent sensitivity.
+
+Example:
+
+js
+
+CopyEdit
+
+`db.users.find().collation({ locale: "en", strength: 2 });`
+
+---
+
+### 77. **What is `$expr` used for in MongoDB?**
+
+Allows using aggregation expressions in queries.
+
+js
+
+CopyEdit
+
+`db.orders.find({ $expr: { $gt: ["$amount", 100] } });`
+
+---
+
+### 78. **What is `$regex` in MongoDB?**
+
+Used for pattern matching in string fields.
+
+js
+
+CopyEdit
+
+`db.users.find({ name: { $regex: /^Ro/, $options: "i" } });`
+
+---
+
+### 79. **Can MongoDB handle ACID properties?**
+
+Yes, since version 4.0+, it supports multi-document ACID transactions, especially in replica sets and sharded clusters.
+
+---
+
+### 80. **What is `$merge` in aggregation?**
+
+Writes aggregation results into a new or existing collection.
+
+---
+
+### 81. **How does MongoDB handle concurrency?**
+
+MongoDB uses **multi-granularity locking**: it locks at database, collection, or document level to allow concurrent read/writes.
+
+---
+
+### 82. **What is `$facet` in aggregation?**
+
+Allows multiple aggregations in parallel on the same data set.
+
+js
+
+CopyEdit
+
+`{   $facet: {     stats: [{ $group: { _id: null, avgAge: { $avg: "$age" } } }],     list: [{ $sort: { age: -1 } }]   } }`
+
+---
+
+### 83. **How does MongoDB store data internally?**
+
+- Stores in BSON format
+    
+- Data is grouped into **extents**, which contain **pages**
+    
+- Pages hold documents
+    
+
+---
+
+### 84. **How does MongoDB ensure durability?**
+
+Uses **journaling** — all write operations are written to a journal before being committed to disk.
+
+---
+
+### 85. **What is a TTL index?**
+
+Time-to-live index automatically deletes documents after a certain time.
+
+js
+
+CopyEdit
+
+`db.sessions.createIndex({ createdAt: 1 }, { expireAfterSeconds: 3600 });`
+
+---
+
+### 86. **How to prevent large documents in MongoDB?**
+
+- Enforce validation
+    
+- Normalize data
+    
+- Break into multiple documents if needed (max size = 16 MB)
+    
+
+---
+
+### 87. **How to get unique values in a field?**
+
+js
+
+CopyEdit
+
+`db.users.distinct("city");`
+
+---
+
+### 88. **How does MongoDB perform horizontal scaling?**
+
+Using **sharding** — partitions data across shards based on a shard key.
+
+---
+
+### 89. **Can you shard a collection after inserting data?**
+
+Yes, but it requires:
+
+- Collection to have an index on the shard key
+    
+- The collection to be sharded manually
+    
+
+---
+
+### 90. **Best practices for choosing a shard key?**
+
+- High cardinality
+    
+- Even distribution
+    
+- Frequently used in queries
+    
+
+---
+
+### 91. **What is `$type` in MongoDB?**
+
+Matches documents where the value is a specified BSON type.
+
+js
+
+CopyEdit
+
+`db.users.find({ age: { $type: "int" } });`
+
+---
+
+### 92. **How to check if a field exists in MongoDB?**
+
+js
+
+CopyEdit
+
+`db.users.find({ age: { $exists: true } });`
+
+---
+
+### 93. **How to rename a field?**
+
+js
+
+CopyEdit
+
+`db.users.updateMany({}, { $rename: { "oldName": "newName" } });`
+
+---
+
+### 94. **How to aggregate nested fields?**
+
+Use dot notation:
+
+js
+
+CopyEdit
+
+`db.users.aggregate([   { $group: { _id: "$address.city", total: { $sum: 1 } } } ]);`
+
+---
+
+### 95. **How to filter array elements in projection?**
+
+Using `$filter`:
+
+js
+
+CopyEdit
+
+`db.users.aggregate([   {     $project: {       hobbies: {         $filter: {           input: "$hobbies",           as: "hobby",           cond: { $eq: ["$$hobby", "reading"] }         }       }     }   } ]);`
+
+---
+
+### 96. **How to optimize a slow query in MongoDB?**
+
+- Use indexes
+    
+- Analyze with `.explain()`
+    
+- Avoid `$where`
+    
+- Use projection to limit fields
+    
+- Avoid scanning large documents
+    
+
+---
+
+### 97. **How to rename a collection?**
+
+js
+
+CopyEdit
+
+`db.oldName.renameCollection("newName");`
+
+---
+
+### 98. **How to clone a collection?**
+
+js
+
+CopyEdit
+
+`db.oldCollection.aggregate([{ $match: {} }, { $out: "newCollection" }]);`
+
+---
+
+### 99. **What is the aggregation `$redact` stage used for?**
+
+To restrict data based on conditions. Useful for role-based access in aggregation pipelines.
+
+---
+
+### 100. **How to handle relationships in MongoDB?**
+
+- **One-to-One**: Embed or reference
+    
+- **One-to-Many**: Embed small arrays, reference large ones
+    
+- **Many-to-Many**: Use reference arrays in both collections
