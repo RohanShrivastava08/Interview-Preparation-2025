@@ -773,3 +773,76 @@ CopyEdit
 
 ---
 ---
+## 🌐 **REST API Design Principles in Express (121–130)**
+
+**121. What are RESTful routes and how do you define them in Express?**  
+Follow HTTP verbs + resource structure:
+
+- GET `/users`
+    
+- GET `/users/:id`
+    
+- POST `/users`
+    
+- PUT `/users/:id`
+    
+- DELETE `/users/:id`
+    
+
+**122. What are good practices when designing REST APIs in Express?**
+
+- Use consistent naming
+    
+- Handle errors properly
+    
+- Validate input
+    
+- Use correct HTTP status codes
+    
+- Avoid overfetching/underfetching
+    
+
+**123. How do you handle API versioning in Express?**  
+Prefix routes like `/api/v1/users`, `/api/v2/users`
+
+**124. How do you structure REST responses in Express?**
+
+js
+
+CopyEdit
+
+`res.status(200).json({   success: true,   data: result,   message: 'Fetched successfully', });`
+
+**125. How do you implement filtering, sorting, and pagination in REST APIs?**  
+Use query params: `?page=2&sort=name&limit=10`
+
+**126. What status codes do you use for typical REST responses?**
+
+- 200 OK
+    
+- 201 Created
+    
+- 400 Bad Request
+    
+- 401 Unauthorized
+    
+- 404 Not Found
+    
+- 500 Server Error
+    
+
+**127. How to handle route errors in REST APIs?**  
+Use global error-handling middleware to return unified error objects.
+
+**128. How to make REST APIs idempotent?**  
+Use PUT/DELETE for idempotent operations – multiple requests = same result.
+
+**129. What is HATEOAS and is it used with Express?**  
+Hypermedia as the Engine of Application State: links in responses to guide clients. Rarely used, but can be manually added.
+
+**130. How do you implement global validation for REST APIs?**  
+Use `Joi`, `zod`, or `express-validator` to validate body/query/params consistently.
+
+---
+---
+
