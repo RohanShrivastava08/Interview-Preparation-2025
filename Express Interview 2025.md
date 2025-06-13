@@ -281,3 +281,90 @@ Yes, use `async/await` with proper error handling.
 ---
 ---
 
+## 🔹 Section 4: Request & Response (46–60)
+
+**46. How to get headers from a request?**
+
+js
+
+CopyEdit
+
+`req.headers['header-name']`
+
+**47. How do you set response status code?**
+
+js
+
+CopyEdit
+
+`res.status(201).send('Created');`
+
+**48. How to send JSON response?**
+
+js
+
+CopyEdit
+
+`res.json({ msg: 'Success' });`
+
+**49. What’s the difference between `res.send()`, `res.json()`, and `res.end()`?**
+
+- `res.send()`: Sends string/buffer/object.
+    
+- `res.json()`: Sends JSON with correct content-type.
+    
+- `res.end()`: Ends the response without data.
+    
+
+**50. How to append cookies to the response?**  
+Using `res.cookie('name', 'value')` (requires `cookie-parser`).
+
+**51. How to read POST data?**  
+Use `express.json()` or `express.urlencoded()` middleware.
+
+**52. How to send file as response?**
+
+js
+
+CopyEdit
+
+`res.sendFile(path.join(__dirname, 'file.txt'));`
+
+**53. How to handle file uploads?**  
+Use middleware like `multer`.
+
+**54. How to handle redirect responses?**
+
+js
+
+CopyEdit
+
+`res.redirect('/new-url');`
+
+**55. How to get IP address of client?**
+
+js
+
+CopyEdit
+
+`req.ip`
+
+**56. What does `res.set()` do?**  
+Sets HTTP response headers.
+
+**57. How do you handle different content types in Express?**  
+Use middleware and check `req.headers['content-type']`.
+
+**58. How to implement rate-limiting?**  
+Use middleware like `express-rate-limit`.
+
+**59. What is the use of `res.format()`?**  
+It responds with different formats based on `Accept` headers.
+
+**60. How do you prevent caching?**
+
+`res.set('Cache-Control', 'no-store');`
+
+---
+---
+
