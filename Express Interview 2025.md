@@ -192,3 +192,92 @@ By mounting routers within routers.
 ---
 ---
 
+## 🔹 Section 3: Middleware & Error Handling (31–45)
+
+**31. What are different types of middleware in Express?**
+
+- Application-level
+    
+- Router-level
+    
+- Error-handling
+    
+- Built-in
+    
+- Third-party
+    
+
+**32. How do you define an error-handling middleware?**
+
+js
+
+CopyEdit
+
+`app.use((err, req, res, next) => {   res.status(500).send(err.message); });`
+
+**33. What is third-party middleware?**  
+Middleware not built into Express, e.g., `cors`, `helmet`, `morgan`.
+
+**34. How do you use `cors` in Express?**
+
+js
+
+CopyEdit
+
+`const cors = require('cors'); app.use(cors());`
+
+**35. How does Express handle async errors?**  
+You must catch them in `try/catch` or use a package like `express-async-handler`.
+
+**36. Can you skip middleware?**  
+Yes, by not calling `next()` or conditionally branching logic.
+
+**37. How do you log HTTP requests?**  
+Using middleware like `morgan`.
+
+**38. What is the difference between global and route-level middleware?**
+
+- Global: Runs for all requests.
+    
+- Route-level: Only for specific paths.
+    
+
+**39. What is `helmet` middleware?**  
+Helps secure Express apps by setting HTTP headers.
+
+**40. How do you handle invalid JSON errors in requests?**  
+Use error-handling middleware to catch JSON parsing errors.
+
+**41. What is the significance of `next(err)`?**  
+It passes errors to the next error-handling middleware.
+
+**42. How to set headers using middleware?**
+
+js
+
+CopyEdit
+
+`res.setHeader('X-Custom-Header', 'value');`
+
+**43. What is `res.locals` used for?**  
+To pass data to views or later middleware in the request-response cycle.
+
+**44. What are some common use cases for middleware?**
+
+- Authentication
+    
+- Logging
+    
+- Parsing
+    
+- CORS
+    
+- Input validation
+    
+
+**45. Can middleware be async?**  
+Yes, use `async/await` with proper error handling.
+
+---
+---
+
