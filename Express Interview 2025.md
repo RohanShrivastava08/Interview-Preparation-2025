@@ -846,3 +846,120 @@ Use `Joi`, `zod`, or `express-validator` to validate body/query/params consisten
 ---
 ---
 
+## 🧱 **Clean Architecture with Express.js (131–140)**
+
+**131. What is Clean Architecture in the context of Express.js?**  
+Clean Architecture emphasizes **separation of concerns**, ensuring that business logic is isolated from infrastructure (like frameworks, DBs, etc.). Key layers:
+
+- **Routes** (HTTP layer)
+    
+- **Controllers** (handle requests)
+    
+- **Services/Use Cases** (business logic)
+    
+- **Models/Repositories** (data access)
+    
+- **Helpers/Utils** (shared logic)
+    
+
+---
+
+**132. Why is Clean Architecture important for Express.js applications?**
+
+- Makes codebase scalable & testable
+    
+- Easy to swap out database or API framework
+    
+- Promotes SRP (Single Responsibility Principle)
+    
+
+---
+
+**133. How should you structure folders in a Clean Architecture Express project?**
+
+plaintext
+
+CopyEdit
+
+`src/ │ ├── routes/          → define Express routes ├── controllers/     → handle req/res logic ├── services/        → business logic ├── models/          → DB schemas (e.g., Mongoose) ├── repositories/    → DB queries abstracted here ├── middlewares/ ├── utils/           → helpers └── app.ts or index.ts`
+
+---
+
+**134. What is the role of a controller in Clean Architecture?**  
+A **controller** handles HTTP specifics:
+
+- Parses request
+    
+- Calls service logic
+    
+- Sends formatted response
+    
+
+Example:
+
+ts
+
+CopyEdit
+
+`export const createUser = async (req, res, next) => {   const user = await userService.createUser(req.body);   res.status(201).json(user); };`
+
+---
+
+**135. What is a service (or use case) in Clean Architecture?**  
+A **service** contains pure business logic, independent of HTTP:
+
+ts
+
+CopyEdit
+
+`export const createUser = async (data) => {   // validate, process, call DB   return userRepository.create(data); };`
+
+---
+
+**136. What is a repository and how is it used?**  
+Repository abstracts data access:
+
+ts
+
+CopyEdit
+
+`export const create = (data) => UserModel.create(data);`
+
+Benefits:
+
+- Replace DB layer without changing business logic
+    
+- Easier to test (mock repository)
+    
+
+---
+
+**137. How do you write unit tests in a cleanly architected Express app?**  
+You can test services and controllers **independently** by mocking repositories and request/response objects.
+
+---
+
+**138. How can middleware be used cleanly in this architecture?**  
+Place middlewares like auth, logger, or error-handlers in `middlewares/` and reuse them across routes or globally.
+
+---
+
+**139. Should database logic be inside services or repositories?**  
+Keep all raw DB logic in **repositories**. Services **call** them and apply business rules.
+
+---
+
+**140. How do you keep controllers “thin” and services “fat”?**  
+Controllers should only:
+
+- Accept request
+    
+- Call service
+    
+- Return response
+    
+
+All heavy logic (validation, computation, DB ops) belongs in **services**.
+
+---
+---
