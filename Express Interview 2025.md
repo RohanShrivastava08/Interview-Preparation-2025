@@ -576,3 +576,61 @@ When performing I/O operations like DB calls, file reads, API calls.
 
 ---
 ---
+## 🔹 Section 7: Advanced Topics (86–95)
+
+**86. How do you create a custom middleware in Express?**
+
+js
+
+CopyEdit
+
+``function logger(req, res, next) {   console.log(`${req.method} ${req.url}`);   next(); } app.use(logger);``
+
+**87. How do you mount multiple apps in Express?**
+
+js
+
+CopyEdit
+
+`const subApp = express(); app.use('/sub', subApp);`
+
+**88. What is the use of `app.locals` and `res.locals`?**
+
+- `app.locals`: app-wide variables
+    
+- `res.locals`: request-scoped variables
+    
+
+**89. What is the purpose of `app.set()` and `app.get()`?**  
+Configure and retrieve app settings like views, environment, etc.
+
+**90. What is `app.disable()` used for?**  
+To turn off Express settings like `x-powered-by`.
+
+**91. How to handle async errors globally in Express?**  
+Wrap routes in `try/catch` or use packages like `express-async-errors`.
+
+**92. What is the difference between Express and Koa?**
+
+- Express: middleware chaining via callbacks
+    
+- Koa: uses async/await, more modular
+    
+
+**93. How to generate an Express project boilerplate quickly?**  
+Use `express-generator`:
+
+bash
+
+CopyEdit
+
+`npx express-generator`
+
+**94. What is `trust proxy` in Express?**  
+Tells Express to trust proxy headers (`X-Forwarded-*`) for IP, protocol.
+
+**95. Can Express be used in serverless environments (e.g., AWS Lambda)?**  
+Yes, using `serverless-http` adapter.
+
+---
+---
