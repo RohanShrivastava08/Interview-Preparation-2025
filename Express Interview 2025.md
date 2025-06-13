@@ -368,3 +368,127 @@ It responds with different formats based on `Accept` headers.
 ---
 ---
 
+## 🔹 Section 5: Security and Authentication (61–75)
+
+**61. How do you secure Express apps against common web vulnerabilities?**  
+Use packages like:
+
+- `helmet` – secure HTTP headers
+    
+- `cors` – handle cross-origin requests
+    
+- `express-rate-limit` – prevent brute-force attacks
+    
+- Input validation – prevent injection attacks
+    
+
+**62. What is CORS and how do you handle it in Express?**  
+CORS (Cross-Origin Resource Sharing) allows or restricts requested resources on a web server.
+
+js
+
+CopyEdit
+
+`const cors = require('cors'); app.use(cors());`
+
+**63. How do you implement JWT authentication in Express?**  
+Use `jsonwebtoken`:
+
+js
+
+CopyEdit
+
+`const jwt = require('jsonwebtoken');  app.post('/login', (req, res) => {   const token = jwt.sign({ id: user.id }, 'secret', { expiresIn: '1h' });   res.json({ token }); });  app.get('/protected', verifyToken, (req, res) => {   res.send('Protected Route'); });`
+
+**64. How do you create a middleware to verify JWT?**
+
+js
+
+CopyEdit
+
+`const verifyToken = (req, res, next) => {   const token = req.headers['authorization'];   if (!token) return res.sendStatus(403);   jwt.verify(token, 'secret', (err, decoded) => {     if (err) return res.sendStatus(401);     req.user = decoded;     next();   }); };`
+
+**65. What are CSRF attacks and how to prevent them?**  
+CSRF (Cross-Site Request Forgery) tricks users into making unintended requests. Prevent it using:
+
+js
+
+CopyEdit
+
+`const csrf = require('csurf'); app.use(csrf({ cookie: true }));`
+
+**66. What are HTTP headers you can set to increase security?**
+
+- `X-Frame-Options`
+    
+- `Content-Security-Policy`
+    
+- `X-XSS-Protection`
+    
+- `Strict-Transport-Security`
+    
+- Set via `helmet`
+    
+
+**67. How do you hash passwords before storing?**  
+Use `bcrypt`:
+
+js
+
+CopyEdit
+
+`const bcrypt = require('bcrypt'); const hashed = await bcrypt.hash(password, 10);`
+
+**68. How do you protect routes with authentication middleware?**  
+Wrap routes:
+
+js
+
+CopyEdit
+
+`app.get('/dashboard', isAuthenticated, controllerFn);`
+
+**69. How do you invalidate JWT tokens (logout)?**  
+JWTs are stateless, so logout is handled on the client. Alternatively, store blacklisted tokens server-side.
+
+**70. What is session-based authentication in Express?**  
+Use `express-session` to store sessions server-side or in-memory:
+
+js
+
+CopyEdit
+
+`app.use(session({ secret: 'secret', resave: false, saveUninitialized: true }));`
+
+**71. What are cookies, and how do you manage them in Express?**  
+Cookies store client data. Use `cookie-parser`:
+
+js
+
+CopyEdit
+
+`const cookieParser = require('cookie-parser'); app.use(cookieParser());`
+
+**72. What is the difference between cookies and sessions?**
+
+- Cookies: stored on client, less secure
+    
+- Sessions: server-side storage, more secure
+    
+
+**73. How do you restrict CORS to specific domains?**
+
+js
+
+CopyEdit
+
+`app.use(cors({ origin: ['https://mydomain.com'] }));`
+
+**74. How to validate incoming request data in Express?**  
+Use `express-validator` or `Joi`.
+
+**75. Why is it risky to trust client-side authentication alone?**  
+Client-side auth can be manipulated. Always validate tokens/server-sessions on backend.
+
+---
+---
