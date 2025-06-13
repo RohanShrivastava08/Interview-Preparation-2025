@@ -682,3 +682,94 @@ CopyEdit
 - Uncaught exceptions
 ---
 ---
+## 🧑‍💻 **Express with TypeScript (111–120)**
+
+**111. How do you set up an Express app using TypeScript?**
+
+1. Install TS: `npm install typescript ts-node-dev @types/node @types/express`
+    
+2. `tsconfig.json` setup
+    
+3. Rename `.js` → `.ts` and define types
+    
+
+**112. How do you type Express `Request`, `Response`, and `NextFunction`?**
+
+ts
+
+CopyEdit
+
+`import { Request, Response, NextFunction } from 'express';  const handler = (req: Request, res: Response, next: NextFunction) => {   res.send('Hello TS'); };`
+
+**113. How do you type route parameters and query in Express TS?**
+
+ts
+
+CopyEdit
+
+`interface Params { id: string } interface Query { search: string }  app.get('/user/:id', (req: Request<Params, {}, {}, Query>, res) => {   res.send(req.params.id + req.query.search); });`
+
+**114. What are the benefits of using TypeScript with Express?**
+
+- Static typing
+    
+- Better IDE support
+    
+- Catch errors at compile time
+    
+- Safer refactoring
+    
+
+**115. How do you define custom types/interfaces for request body?**
+
+ts
+
+CopyEdit
+
+`interface UserBody { name: string; email: string }  app.post('/user', (req: Request<{}, {}, UserBody>, res) => {   const { name } = req.body; });`
+
+**116. How do you define middleware with types in TypeScript?**
+
+ts
+
+CopyEdit
+
+`const logger: RequestHandler = (req, res, next) => {   console.log(req.method);   next(); };`
+
+**117. How to organize a scalable Express TS project structure?**  
+Use folders like:
+
+- `controllers/`
+    
+- `routes/`
+    
+- `interfaces/`
+    
+- `services/`
+    
+- `middlewares/`
+    
+- `types/`
+    
+
+**118. How do you type error-handling middleware in TypeScript?**
+
+ts
+
+CopyEdit
+
+`function errorHandler(   err: Error,   req: Request,   res: Response,   next: NextFunction ) {   res.status(500).json({ message: err.message }); }`
+
+**119. How do you write reusable interfaces/types for routes in TS?**  
+Place them in `types/` or `interfaces/` folders and import where needed.
+
+**120. How do you integrate Mongoose with TypeScript?**
+
+ts
+
+CopyEdit
+
+`import { Document, Schema, model } from 'mongoose';  interface IUser extends Document {   name: string;   email: string; }`
+
+---
+---
