@@ -492,3 +492,87 @@ Client-side auth can be manipulated. Always validate tokens/server-sessions on b
 
 ---
 ---
+## 🔹 Section 6: Performance & Optimization (76–85)
+
+**76. How can you optimize performance in Express apps?**
+
+- Use compression
+    
+- Limit middleware
+    
+- Cache responses
+    
+- Optimize database queries
+    
+- Use load balancers
+    
+
+**77. How to enable GZIP compression in Express?**
+
+js
+
+CopyEdit
+
+`const compression = require('compression'); app.use(compression());`
+
+**78. What is request throttling and how is it implemented?**  
+Prevent spamming with `express-rate-limit`:
+
+js
+
+CopyEdit
+
+`const rateLimit = require('express-rate-limit'); app.use(rateLimit({ windowMs: 1 * 60 * 1000, max: 100 }));`
+
+**79. How to implement response caching?**  
+Use `apicache` or Redis to cache frequent responses.
+
+**80. What are best practices to structure a large Express app?**
+
+- Modular routing
+    
+- Use controllers/services
+    
+- Layered architecture (routes → controllers → services → models)
+    
+
+**81. How do you profile performance bottlenecks in Express apps?**
+
+- Use Node's built-in profiler
+    
+- Tools like `clinic.js`, `PM2`, or `New Relic`
+    
+
+**82. What is clustering in Node.js and how can it help Express?**  
+Clusters use multiple CPU cores:
+
+js
+
+CopyEdit
+
+`const cluster = require('cluster');`
+
+**83. How to prevent memory leaks in Express apps?**
+
+- Avoid global variables
+    
+- Properly close DB connections
+    
+- Monitor memory usage
+    
+
+**84. When should you use async handlers in Express?**  
+When performing I/O operations like DB calls, file reads, API calls.
+
+**85. What are the benefits of using a reverse proxy like Nginx with Express?**
+
+- SSL termination
+    
+- Load balancing
+    
+- Better static file handling
+    
+- Security headers
+
+---
+---
