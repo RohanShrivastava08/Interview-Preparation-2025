@@ -634,3 +634,51 @@ Yes, using `serverless-http` adapter.
 
 ---
 ---
+## 🔹 Section 8: Testing & Deployment (96–100)
+
+**96. How do you test Express APIs?**  
+Use:
+
+- `supertest`
+    
+- `jest` or `mocha`
+    
+
+js
+
+CopyEdit
+
+`const request = require('supertest'); request(app).get('/api').expect(200);`
+
+**97. How to write unit tests for Express routes?**  
+Mock services and test handlers independently using test frameworks like Jest.
+
+**98. How to deploy an Express app to production?**
+
+- Use services like Render, Railway, Vercel, or AWS
+    
+- Serve via Nginx + PM2 or Docker
+    
+
+**99. How to handle environment variables in Express?**  
+Use `dotenv`:
+
+js
+
+CopyEdit
+
+`require('dotenv').config(); console.log(process.env.PORT);`
+
+**100. What are common deployment issues with Express apps?**
+
+- CORS issues
+    
+- Port binding
+    
+- Incorrect environment variables
+    
+- Improper async error handling
+    
+- Uncaught exceptions
+---
+---
