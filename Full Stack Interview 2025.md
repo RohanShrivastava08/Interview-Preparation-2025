@@ -1288,4 +1288,258 @@ CopyEdit
 
 ---
 ---
+## 🟦 **SECTION 6: Full Stack Integration, Deployment, Git, CI/CD, System Design (Q86–100)**
 
+---
+
+### **86. How does the MERN stack work together?**
+
+**Answer:**
+
+- **MongoDB**: NoSQL database to store data.
+    
+- **Express.js**: Backend framework on top of Node.js to handle routes & API logic.
+    
+- **React.js**: Frontend library to build UI.
+    
+- **Node.js**: Server runtime for running JavaScript.
+    
+
+**Flow**:  
+React → API Calls → Express (Node.js) → MongoDB → Response → React UI
+
+---
+
+### **87. How do you connect frontend to backend in MERN?**
+
+**Answer:**
+
+- Use `fetch()` or `axios` from React to call backend APIs.
+    
+- Example:
+    
+
+js
+
+CopyEdit
+
+`axios.post("/api/login", { email, password });`
+
+Ensure CORS is handled properly on the backend.
+
+---
+
+### **88. How do you structure a full stack project?**
+
+**Answer:**
+
+bash
+
+CopyEdit
+
+`/client   → React frontend /server   → Express backend .env      → Shared configs`
+
+Backend handles routes, controllers, DB logic.  
+Frontend handles UI and state using context/hooks.
+
+---
+
+### **89. How do you deploy a MERN app?**
+
+**Answer:**
+
+- **Frontend**: Vercel, Netlify, or static site on Nginx/S3.
+    
+- **Backend**: Render, Railway, or VPS (like EC2).
+    
+- **DB**: MongoDB Atlas (cloud DB).
+    
+
+Can also deploy all in one using services like Render or DigitalOcean.
+
+---
+
+### **90. How do you manage environment variables in full stack apps?**
+
+**Answer:**
+
+- Use `.env` files in both frontend and backend.
+    
+- Frontend: Variables must start with `REACT_APP_` or `VITE_`.
+    
+
+**Security tip**: Never expose secrets in frontend code.
+
+---
+
+### **91. What is Git and why is it used?**
+
+**Answer:**  
+Git is a **version control system** that helps track changes in code over time.  
+Benefits:
+
+- Collaboration via branches
+    
+- Revert history
+    
+- Merge features safely
+    
+
+---
+
+### **92. Common Git commands you use?**
+
+**Answer:**
+
+bash
+
+CopyEdit
+
+`git init             # initialize repo git clone <url>      # clone remote git status           # check status git add .            # stage changes git commit -m ""     # commit git push origin main # push to branch`
+
+---
+
+### **93. What are branches in Git and why use them?**
+
+**Answer:**  
+Branches are used to work on features independently without affecting the main codebase.
+
+Example:
+
+bash
+
+CopyEdit
+
+`git checkout -b feature/login`
+
+---
+
+### **94. What is pull request (PR) and how does it work?**
+
+**Answer:**  
+PR is a request to merge your feature branch into the main branch on platforms like GitHub.  
+Team members review code before merging (code review, CI checks).
+
+---
+
+### **95. What is CI/CD and why is it important?**
+
+**Answer:**  
+CI/CD = Continuous Integration & Continuous Deployment
+
+- CI: Automatically runs tests on every push (e.g., GitHub Actions)
+    
+- CD: Automatically deploys code when merged
+    
+
+Tools: GitHub Actions, Jenkins, CircleCI, Vercel
+
+---
+
+### **96. What is Webpack / Vite and why are they used?**
+
+**Answer:**  
+They are **build tools** that bundle frontend assets (JS, CSS, etc.).
+
+- **Webpack**: Older but highly configurable.
+    
+- **Vite**: Modern, fast dev server with hot reloading and ES Module support.
+    
+
+---
+
+### **97. What are service workers and why are they used?**
+
+**Answer:**  
+Service workers are scripts that run in the background and:
+
+- Enable offline support (via caching)
+    
+- Push notifications
+    
+- Background sync
+    
+
+Used in Progressive Web Apps (PWAs).
+
+---
+
+### **98. What is lazy loading and how do you implement it in React?**
+
+**Answer:**  
+Lazy loading delays loading a component until it’s needed.
+
+js
+
+CopyEdit
+
+`const LazyComp = React.lazy(() => import('./LazyComp'));`
+
+Used with `<Suspense fallback={<Loader />}>`.
+
+---
+
+### **99. Explain a basic system design of a URL shortener.**
+
+**Answer:**
+
+- **Frontend**: Input URL, display short URL
+    
+- **Backend**:
+    
+    - Store long URL with short code in MongoDB
+        
+    - GET `/short/:code` → redirect
+        
+    - POST `/shorten` → generate & save code
+        
+
+**Optional Features**:
+
+- Expiry
+    
+- Analytics
+    
+- Rate limiting
+    
+
+---
+
+### **100. How would you design a scalable full stack application?**
+
+**Answer:**  
+**Frontend:**
+
+- React + lazy loading + state management
+    
+
+**Backend:**
+
+- Node.js + Express with layered architecture
+    
+    - `routes`, `controllers`, `services`, `models`
+        
+
+**Database:**
+
+- MongoDB with indexing, validation, schema design
+    
+
+**Deployment:**
+
+- Vercel (frontend), Render (backend), MongoDB Atlas
+    
+- Environment-based configs
+    
+- CI/CD pipeline via GitHub Actions
+    
+
+**Best Practices:**
+
+- Error handling
+    
+- Input validation
+    
+- Security (JWT, Helmet, CORS, rate-limiting)
+    
+- Logging & monitoring
