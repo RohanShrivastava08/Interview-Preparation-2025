@@ -1041,4 +1041,247 @@ CopyEdit
 
 ---
 ---
+## 🟨 **SECTION 5: MongoDB, Database Design, Mongoose, Aggregation (Q71–85)**
 
+---
+
+### **71. What is MongoDB?**
+
+**Answer:**  
+MongoDB is a **NoSQL, document-oriented database** that stores data in flexible, JSON-like **BSON** documents.  
+Features:
+
+- Schema-less
+    
+- High performance and scalability
+    
+- Document-based (not rows and columns)
+    
+
+---
+
+### **72. Difference between SQL and NoSQL?**
+
+|Feature|SQL (Relational)|NoSQL (MongoDB)|
+|---|---|---|
+|Data format|Tables & rows|Documents (JSON-like)|
+|Schema|Fixed schema|Dynamic schema|
+|Joins|Supported|Limited (via `$lookup`)|
+|Scaling|Vertical (scale up)|Horizontal (scale out)|
+
+---
+
+### **73. What is a collection and a document in MongoDB?**
+
+**Answer:**
+
+- **Collection** = table (group of related documents)
+    
+- **Document** = individual JSON-like record
+    
+
+Example:
+
+json
+
+CopyEdit
+
+`{   "_id": "123",   "name": "Rohan",   "age": 25 }`
+
+---
+
+### **74. What is Mongoose and why use it?**
+
+**Answer:**  
+Mongoose is an **ODM (Object Data Modeling)** library for MongoDB and Node.js.  
+It provides:
+
+- Schema definition
+    
+- Model methods
+    
+- Validations
+    
+- Middleware (pre/post hooks)
+    
+
+---
+
+### **75. How do you define a Mongoose model?**
+
+**Answer:**
+
+js
+
+CopyEdit
+
+`const mongoose = require('mongoose');  const userSchema = new mongoose.Schema({   name: String,   email: String,   age: Number, });  const User = mongoose.model('User', userSchema);`
+
+---
+
+### **76. Common Mongoose methods for CRUD?**
+
+**Answer:**
+
+js
+
+CopyEdit
+
+`User.create(data);         // Create User.find();               // Read all User.findById(id);         // Read one User.findByIdAndUpdate();  // Update User.findByIdAndDelete();  // Delete`
+
+---
+
+### **77. How do you validate data in Mongoose?**
+
+**Answer:**  
+Using built-in validation rules in the schema:
+
+js
+
+CopyEdit
+
+`age: {   type: Number,   required: true,   min: 0,   max: 120 }`
+
+Or custom validators:
+
+js
+
+CopyEdit
+
+`email: {   type: String,   validate: [validator.isEmail, 'Invalid email'] }`
+
+---
+
+### **78. What are MongoDB indexes? Why are they important?**
+
+**Answer:**  
+Indexes **improve query performance**.  
+Without indexes, MongoDB performs a full collection scan.
+
+Create an index:
+
+js
+
+CopyEdit
+
+`db.users.createIndex({ email: 1 })`
+
+---
+
+### **79. What is the Aggregation Framework in MongoDB?**
+
+**Answer:**  
+Used for advanced data processing (grouping, filtering, transforming).
+
+Example:
+
+js
+
+CopyEdit
+
+`db.orders.aggregate([   { $match: { status: "delivered" } },   { $group: { _id: "$userId", total: { $sum: "$amount" } } } ]);`
+
+---
+
+### **80. What are the stages in an aggregation pipeline?**
+
+**Answer:**  
+Common stages:
+
+- `$match` – filter
+    
+- `$group` – aggregate
+    
+- `$project` – reshape
+    
+- `$sort`, `$limit`, `$skip`
+    
+- `$lookup` – join
+    
+- `$unwind` – flatten arrays
+    
+
+---
+
+### **81. What is the use of `$lookup` in MongoDB?**
+
+**Answer:**  
+It performs a **left outer join** between collections.
+
+Example:
+
+js
+
+CopyEdit
+
+`{   $lookup: {     from: "orders",     localField: "_id",     foreignField: "userId",     as: "orders"   } }`
+
+---
+
+### **82. Difference between `find()` and `aggregate()` in MongoDB?**
+
+|Feature|`find()`|`aggregate()`|
+|---|---|---|
+|Use case|Simple queries|Complex data transformation|
+|Returns|Documents directly|Pipeline results|
+|Features|Basic filters|Grouping, lookup, computed fields|
+
+---
+
+### **83. How do you implement pagination in MongoDB?**
+
+**Answer:**  
+Use `.skip()` and `.limit()`:
+
+js
+
+CopyEdit
+
+`db.users.find().skip(20).limit(10);`
+
+In Mongoose:
+
+js
+
+CopyEdit
+
+`User.find().skip((page-1)*limit).limit(limit);`
+
+---
+
+### **84. How do you handle relations in MongoDB (1:1, 1:N)?**
+
+**Answer:**
+
+- **1:1**: Embed or reference
+    
+- **1:N**: Either embed an array or use references
+    
+
+Example (referencing):
+
+js
+
+CopyEdit
+
+`userSchema = { posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }] }`
+
+Populate:
+
+js
+
+CopyEdit
+
+`User.find().populate("posts");`
+
+---
+
+### **85. How to handle schema-less flexibility in MongoDB projects?**
+
+**Answer:**
+
+- Use **Mongoose validation** and schemas
+    
+- Use schema migration tools or add versioning (`__v`)
+    
+- Define clear model contracts even if MongoDB is flexible
