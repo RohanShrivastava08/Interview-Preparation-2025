@@ -425,3 +425,302 @@ CopyEdit
 
 ---
 ---
+## 🟩 **SECTION 3: React.js & Frontend Frameworks (Q31–50)**
+
+---
+
+### **31. What is React and why is it used?**
+
+**Answer:**  
+React is a **JavaScript library for building user interfaces**, especially single-page applications.  
+Key features:
+
+- Component-based architecture
+    
+- Virtual DOM for faster updates
+    
+- JSX for writing HTML in JS
+    
+- Unidirectional data flow
+    
+
+---
+
+### **32. What is the Virtual DOM in React?**
+
+**Answer:**  
+The Virtual DOM is a **lightweight in-memory representation** of the real DOM.  
+When state changes, React:
+
+1. Creates a new virtual DOM.
+    
+2. Diffs it with the previous one.
+    
+3. Efficiently updates the real DOM (reconciliation).
+    
+
+---
+
+### **33. What are React Hooks? Name a few.**
+
+**Answer:**  
+Hooks are **functions that let you use state and other React features in functional components**.  
+Common hooks:
+
+- `useState()` – manage state
+    
+- `useEffect()` – side effects
+    
+- `useContext()` – context API
+    
+- `useRef()`, `useMemo()`, `useCallback()`
+    
+
+---
+
+### **34. Difference between useEffect and useLayoutEffect?**
+
+**Answer:**
+
+- `useEffect()`: Runs **after** the DOM has been painted.
+    
+- `useLayoutEffect()`: Runs **before paint**, blocking rendering. Use carefully for layout measurements.
+    
+
+---
+
+### **35. What is JSX?**
+
+**Answer:**  
+JSX stands for **JavaScript XML**.  
+It lets you write HTML-like syntax inside JavaScript.
+
+js
+
+CopyEdit
+
+`const element = <h1>Hello, React</h1>;`
+
+JSX gets transpiled to `React.createElement(...)`.
+
+---
+
+### **36. Explain the component lifecycle in React.**
+
+**Answer:**  
+In function components with Hooks:
+
+- `useEffect(() => {}, [])` = componentDidMount
+    
+- `useEffect(() => { return () => {} })` = componentWillUnmount
+    
+- `useEffect(() => {}, [dep])` = componentDidUpdate for `dep`
+    
+
+Class-based:
+
+- `constructor`
+    
+- `render`
+    
+- `componentDidMount`
+    
+- `componentDidUpdate`
+    
+- `componentWillUnmount`
+    
+
+---
+
+### **37. Controlled vs Uncontrolled components in React?**
+
+**Answer:**
+
+- **Controlled**: Form elements controlled via React state.
+    
+
+js
+
+CopyEdit
+
+`<input value={name} onChange={e => setName(e.target.value)} />`
+
+- **Uncontrolled**: Use `ref` to access DOM value directly.
+    
+
+---
+
+### **38. What is the Context API?**
+
+**Answer:**  
+Context API allows **global state sharing** without prop drilling.
+
+js
+
+CopyEdit
+
+`const ThemeContext = React.createContext(); <ThemeContext.Provider value="dark">   <App /> </ThemeContext.Provider>`
+
+Consume via `useContext(ThemeContext)`.
+
+---
+
+### **39. How do keys work in React?**
+
+**Answer:**  
+`key` prop helps React identify which items changed, added, or removed.  
+They must be **unique and stable**.
+
+js
+
+CopyEdit
+
+`{items.map(item => <li key={item.id}>{item.name}</li>)}`
+
+---
+
+### **40. What causes performance issues in React and how to optimize?**
+
+**Answer:**  
+Causes:
+
+- Re-renders due to unnecessary state/prop changes
+    
+- Heavy computations
+    
+
+Optimizations:
+
+- `React.memo` to memoize components
+    
+- `useMemo`, `useCallback`
+    
+- Virtualization (e.g., react-window)
+    
+- Splitting code with `React.lazy()`
+    
+
+---
+
+### **41. Difference between props and state?**
+
+**Answer:**
+
+- **Props**: Passed from parent, read-only.
+    
+- **State**: Managed inside the component, can be updated.
+    
+
+---
+
+### **42. What is prop drilling?**
+
+**Answer:**  
+When data is passed through multiple layers of components just to reach a deeply nested component.  
+**Solution:** Context API or state management libraries (Redux/Zustand).
+
+---
+
+### **43. How do you handle side effects in React?**
+
+**Answer:**  
+Using the `useEffect()` hook.
+
+js
+
+CopyEdit
+
+`useEffect(() => {   fetchData(); }, []);`
+
+Also used for:
+
+- DOM manipulation
+    
+- Event listeners
+    
+- Timers
+    
+
+---
+
+### **44. What is Redux and how does it work?**
+
+**Answer:**  
+Redux is a **state management library** for JS apps.  
+Flow:
+
+- Actions → Reducers → Store → Components
+    
+- Store is a **single source of truth**
+    
+- Uses pure functions (reducers) to update state
+    
+
+---
+
+### **45. What is the difference between `useReducer` and Redux?**
+
+**Answer:**
+
+- `useReducer`: Local state management inside a component.
+    
+- Redux: Global state management across the app.
+    
+
+---
+
+### **46. What are Higher Order Components (HOC)?**
+
+**Answer:**  
+A **HOC is a function that takes a component and returns a new component**.
+
+js
+
+CopyEdit
+
+`const withLogger = (Wrapped) => (props) => {   console.log('Render:', props);   return <Wrapped {...props} />; };`
+
+Used for reuse, abstraction.
+
+---
+
+### **47. What is React Router?**
+
+**Answer:**  
+A library for **navigating between components** in SPAs.
+
+- `<BrowserRouter>`, `<Route>`, `<Link>`, `useNavigate`, `useParams`
+    
+
+---
+
+### **48. Difference between `useEffect` and `useMemo`?**
+
+**Answer:**
+
+- `useEffect`: Runs **side effects** after render.
+    
+- `useMemo`: **Memoizes a value** to avoid recomputation unless dependencies change.
+    
+
+---
+
+### **49. What is SSR in React (Next.js)?**
+
+**Answer:**  
+Server-Side Rendering: HTML is generated on the server.  
+Next.js supports:
+
+- `getServerSideProps()` for SSR
+    
+- `getStaticProps()` for SSG
+    
+- Great for SEO and initial load speed
+    
+
+---
+
+### **50. What is reconciliation in React?**
+
+**Answer:**  
+The process React uses to **diff the new Virtual DOM with the previous one** and update the real DOM with minimal changes.
