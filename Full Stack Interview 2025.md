@@ -1038,3 +1038,7 @@ js
 CopyEdit
 
 `router.get('/users', userController.getAllUsers);`
+
+---
+---
+
