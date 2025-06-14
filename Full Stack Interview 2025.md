@@ -135,3 +135,6 @@ The Critical Rendering Path is the sequence of steps the browser performs to ren
 5. Paint
     
 6. Composite
+
+---
+---
