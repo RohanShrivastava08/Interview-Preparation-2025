@@ -727,3 +727,314 @@ The process React uses to **diff the new Virtual DOM with the previous one** and
 
 ---
 ---
+## 🟥 **SECTION 4: Backend (Node.js + Express), REST APIs, Middleware (Q51–70)**
+
+---
+
+### **51. What is Node.js and why is it used?**
+
+**Answer:**  
+Node.js is a **JavaScript runtime built on Chrome’s V8 engine**. It lets you run JS on the server side.  
+Used for:
+
+- Building scalable network applications
+    
+- Real-time apps (chat, live dashboards)
+    
+- APIs (REST/GraphQL)
+    
+
+---
+
+### **52. What is the difference between CommonJS and ES Modules?**
+
+**Answer:**
+
+- **CommonJS (CJS)**: `require()`, `module.exports` (default in Node.js)
+    
+- **ES Modules (ESM)**: `import`, `export` (modern JS standard)
+    
+
+Node supports both:
+
+js
+
+CopyEdit
+
+`// CJS const fs = require('fs');  // ESM import fs from 'fs';`
+
+---
+
+### **53. What is the event-driven model in Node.js?**
+
+**Answer:**  
+Node.js uses an **event loop** to handle asynchronous operations (non-blocking I/O).  
+It processes:
+
+- Events (like HTTP requests)
+    
+- Timers
+    
+- I/O callbacks
+    
+
+This allows high concurrency with a single thread.
+
+---
+
+### **54. What is Express.js?**
+
+**Answer:**  
+Express is a **minimal and flexible Node.js web framework** for building RESTful APIs and web apps.  
+Features:
+
+- Routing
+    
+- Middleware support
+    
+- Error handling
+    
+- Request/response abstraction
+    
+
+---
+
+### **55. How does routing work in Express?**
+
+**Answer:**  
+Routing is how an application responds to a request.
+
+js
+
+CopyEdit
+
+``app.get('/user/:id', (req, res) => {   res.send(`User ${req.params.id}`); });``
+
+---
+
+### **56. What is middleware in Express?**
+
+**Answer:**  
+Middleware functions are functions that have access to the **request**, **response**, and `next()` function.
+
+js
+
+CopyEdit
+
+`app.use((req, res, next) => {   console.log('Request URL:', req.url);   next(); });`
+
+Types:
+
+- Application-level
+    
+- Router-level
+    
+- Error-handling
+    
+
+---
+
+### **57. How do you create RESTful APIs in Express?**
+
+**Answer:**  
+Using CRUD endpoints:
+
+js
+
+CopyEdit
+
+`app.get('/items', ...); app.post('/items', ...); app.put('/items/:id', ...); app.delete('/items/:id', ...);`
+
+Each route maps to an HTTP method and resource.
+
+---
+
+### **58. What is the difference between `res.send()`, `res.json()`, and `res.end()`?**
+
+**Answer:**
+
+- `res.send()`: Sends a response of any type (auto-detects).
+    
+- `res.json()`: Sends a JSON response (adds `Content-Type: application/json`)
+    
+- `res.end()`: Ends the response without data.
+    
+
+---
+
+### **59. What is body-parser and why is it used?**
+
+**Answer:**  
+Body-parser is middleware to **parse incoming request bodies** (like JSON or URL-encoded).
+
+js
+
+CopyEdit
+
+`app.use(express.json()); app.use(express.urlencoded({ extended: true }));`
+
+---
+
+### **60. How do you handle errors in Express?**
+
+**Answer:**  
+Use middleware with 4 params:
+
+js
+
+CopyEdit
+
+`app.use((err, req, res, next) => {   console.error(err.stack);   res.status(500).send('Something broke!'); });`
+
+---
+
+### **61. What is CORS and how do you enable it in Express?**
+
+**Answer:**  
+CORS = Cross-Origin Resource Sharing  
+Enable using middleware:
+
+js
+
+CopyEdit
+
+`const cors = require('cors'); app.use(cors());`
+
+Or configure it manually via headers.
+
+---
+
+### **62. How do you secure Express apps?**
+
+**Answer:**
+
+- Use `helmet` for security headers
+    
+- Sanitize user input
+    
+- Use rate limiting (`express-rate-limit`)
+    
+- Validate all inputs
+    
+- Use HTTPS and tokens
+    
+
+---
+
+### **63. What are environment variables and how do you use them?**
+
+**Answer:**  
+Store secrets/config outside code (e.g., API keys, DB strings).  
+Use `.env` file + `dotenv`:
+
+js
+
+CopyEdit
+
+`require('dotenv').config(); console.log(process.env.DB_URL);`
+
+---
+
+### **64. How do you connect Node.js to MongoDB?**
+
+**Answer:**  
+Using `mongoose` or `mongodb` driver.
+
+js
+
+CopyEdit
+
+`const mongoose = require('mongoose'); mongoose.connect(process.env.MONGO_URI);`
+
+Then define schemas and models.
+
+---
+
+### **65. What are HTTP status codes you often use in REST APIs?**
+
+**Answer:**
+
+- 200 – OK
+    
+- 201 – Created
+    
+- 400 – Bad Request
+    
+- 401 – Unauthorized
+    
+- 403 – Forbidden
+    
+- 404 – Not Found
+    
+- 500 – Internal Server Error
+    
+
+---
+
+### **66. What is JSON Web Token (JWT)?**
+
+**Answer:**  
+JWT is a token format used for **authentication**.  
+Structure: `header.payload.signature`
+
+js
+
+CopyEdit
+
+`const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);`
+
+Sent in headers, verified on protected routes.
+
+---
+
+### **67. What is the difference between authentication and authorization?**
+
+**Answer:**
+
+- **Authentication**: Who are you? (login)
+    
+- **Authorization**: Are you allowed to do this? (roles/permissions)
+    
+
+---
+
+### **68. What is a middleware chain in Express?**
+
+**Answer:**  
+A series of middleware functions called in sequence for a request.  
+Each must call `next()` to continue.
+
+js
+
+CopyEdit
+
+`app.use(authMiddleware); app.use(logMiddleware); app.get('/dashboard', handler);`
+
+---
+
+### **69. What is the purpose of `next()` in Express?**
+
+**Answer:**  
+It passes control to the **next middleware** or route handler.  
+Without it, the request **hangs**.
+
+---
+
+### **70. How do you structure a scalable Express app?**
+
+**Answer:**  
+Use modular structure:
+
+bash
+
+CopyEdit
+
+`/controllers /routes /models /middleware /config`
+
+Example:
+
+js
+
+CopyEdit
+
+`router.get('/users', userController.getAllUsers);`
