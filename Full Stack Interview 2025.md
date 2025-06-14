@@ -724,3 +724,6 @@ Next.js supports:
 
 **Answer:**  
 The process React uses to **diff the new Virtual DOM with the previous one** and update the real DOM with minimal changes.
+
+---
+---
