@@ -81,3 +81,7 @@ MVC stands for Model-View-Controller:
 
 **Answer:**  
 JWT (JSON Web Token) is used for authentication. A token is signed and sent to the client. The client sends it with every request. The server verifies the token to allow access.
+
+---
+---
+
