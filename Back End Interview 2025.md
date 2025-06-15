@@ -289,3 +289,6 @@ An ORM (e.g., Sequelize, TypeORM, Prisma) maps objects to DB rows.
 - **Pros:** Faster dev, abstraction, cross-DB support.
     
 - **Cons:** Less control, can generate inefficient queries.
+
+---
+---
