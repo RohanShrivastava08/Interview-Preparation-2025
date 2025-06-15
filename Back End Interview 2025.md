@@ -292,3 +292,206 @@ An ORM (e.g., Sequelize, TypeORM, Prisma) maps objects to DB rows.
 
 ---
 ---
+
+## ✅ **INTERMEDIATE to ADVANCED LEVEL (continued)**
+
+### 26. **What is middleware in Express.js? Give an example.**
+
+**Answer:**  
+Middleware is a function that has access to `req`, `res`, and `next` objects in the request-response cycle. It can execute code, modify req/res, end the req-res cycle, or call next middleware.
+
+Example:
+
+js
+
+CopyEdit
+
+`app.use((req, res, next) => {   console.log('Request URL:', req.url);   next(); });`
+
+---
+
+### 27. **How does Node.js handle child processes?**
+
+**Answer:**  
+Node.js can spawn child processes using the `child_process` module. It allows running external processes asynchronously, useful for CPU-intensive tasks or running shell commands.
+
+---
+
+### 28. **What are Promises and async/await in Node.js?**
+
+**Answer:**  
+Promises represent future completion or failure of async operations. `async/await` is syntactic sugar over Promises for writing asynchronous code in a more synchronous style.
+
+---
+
+### 29. **Explain connection pooling. Why is it used?**
+
+**Answer:**  
+Connection pooling reuses database connections to avoid overhead of opening/closing connections for each request, improving performance and scalability.
+
+---
+
+### 30. **What is the difference between synchronous and asynchronous I/O?**
+
+**Answer:**  
+Synchronous I/O blocks the execution until the operation completes. Asynchronous I/O allows other tasks to run before completion, improving throughput and responsiveness.
+
+---
+
+### 31. **What is the use of environment variables in backend applications?**
+
+**Answer:**  
+Environment variables store configuration such as DB credentials, API keys, and secrets outside code for security and flexibility across environments (development, production).
+
+---
+
+### 32. **How do you secure sensitive data like passwords?**
+
+**Answer:**  
+Passwords are hashed with algorithms like bcrypt or argon2, often salted, so stored passwords are not plain text and can't be reversed.
+
+---
+
+### 33. **What is a reverse proxy? Name an example.**
+
+**Answer:**  
+A reverse proxy sits between clients and servers, forwarding requests and providing security, load balancing, and caching. Example: NGINX.
+
+---
+
+### 34. **How do you implement pagination in APIs?**
+
+**Answer:**  
+Pagination splits data into chunks. Common methods:
+
+- Offset-based (e.g., `?page=2&limit=10`)
+    
+- Cursor-based (using a unique id or timestamp for better performance on large datasets)
+    
+
+---
+
+### 35. **What is database sharding?**
+
+**Answer:**  
+Sharding splits a large database into smaller, faster, more manageable parts called shards, each holding a subset of the data.
+
+---
+
+### 36. **What are webhooks?**
+
+**Answer:**  
+Webhooks are user-defined HTTP callbacks triggered by events. They allow communication between applications in real-time.
+
+---
+
+### 37. **Explain how to implement file upload in a Node.js backend.**
+
+**Answer:**  
+Use middleware like `multer` to handle multipart/form-data. Files can be stored locally or uploaded to cloud storage (AWS S3, Google Cloud).
+
+---
+
+### 38. **How do you debug Node.js applications?**
+
+**Answer:**  
+Use `console.log`, Node.js debugger (`node inspect`), Chrome DevTools, or VSCode debugger extensions.
+
+---
+
+### 39. **What is eventual consistency?**
+
+**Answer:**  
+In distributed systems, eventual consistency means updates will propagate to all nodes eventually, but immediate consistency isn't guaranteed.
+
+---
+
+### 40. **What is an API gateway?**
+
+**Answer:**  
+An API gateway manages, routes, and secures API calls between clients and backend services. It can provide rate limiting, caching, and authentication.
+
+---
+
+### 41. **How would you implement logging in a backend system?**
+
+**Answer:**  
+Use logging libraries like `winston` or `bunyan` to capture info, warning, error logs. Logs can be stored in files or sent to monitoring tools (ELK stack).
+
+---
+
+### 42. **What is dependency injection?**
+
+**Answer:**  
+A design pattern where an object receives its dependencies from an external source rather than creating them itself, improving testability and modularity.
+
+---
+
+### 43. **What are GraphQL advantages over REST?**
+
+**Answer:**  
+GraphQL allows clients to request only needed data, supports complex queries in a single request, and has a strongly typed schema.
+
+---
+
+### 44. **What is the difference between horizontal and vertical scaling?**
+
+**Answer:**
+
+- **Vertical scaling:** Adding more resources (CPU, RAM) to a single server.
+    
+- **Horizontal scaling:** Adding more machines to distribute load.
+    
+
+---
+
+### 45. **What is rate limiting and throttling? How are they different?**
+
+**Answer:**
+
+- **Rate limiting:** Restricts number of requests in a fixed window.
+    
+- **Throttling:** Limits request rate dynamically to prevent overload.
+    
+
+---
+
+### 46. **Explain JWT structure.**
+
+**Answer:**  
+JWT consists of three parts:
+
+- Header (algorithm, type)
+    
+- Payload (claims/data)
+    
+- Signature (verifies token integrity)
+    
+
+---
+
+### 47. **How do you prevent Cross-Site Scripting (XSS)?**
+
+**Answer:**  
+Sanitize user inputs, use HTTP headers like Content Security Policy (CSP), and escape output in views.
+
+---
+
+### 48. **Explain the concept of middleware chaining in Express.**
+
+**Answer:**  
+Middleware functions are executed in sequence, calling `next()` to pass control to the next middleware until the response is sent.
+
+---
+
+### 49. **What are microservices and how do they communicate?**
+
+**Answer:**  
+Microservices are small, independent services. They communicate via REST, gRPC, or messaging queues.
+
+---
+
+### 50. **How do you handle database migrations in production?**
+
+**Answer:**  
+Use migration tools (e.g., Sequelize migrations, Flyway) to apply schema changes in a controlled, versioned manner ensuring backward compatibility.
