@@ -173,3 +173,119 @@ A transaction is a sequence of DB operations that are executed as a single unit.
 
 ---
 ---
+
+## ✅ **ADVANCED LEVEL (3+ YOE)**
+
+### 17. **How do you scale a backend application?**
+
+**Answer:**
+
+- **Vertical Scaling:** Increase hardware.
+    
+- **Horizontal Scaling:** Add more instances.
+    
+- Use load balancers, caching (Redis), database sharding, microservices, message queues.
+    
+
+---
+
+### 18. **What is a message queue? Why use it?**
+
+**Answer:**  
+A message queue (like RabbitMQ, Kafka) decouples services and helps in asynchronous communication. Useful for tasks like sending emails, notifications, background processing.
+
+---
+
+### 19. **What is the difference between monolithic and microservices architecture?**
+
+**Answer:**
+
+- **Monolithic:** All code in one deployable unit.
+    
+- **Microservices:** Split into independent services with clear boundaries and APIs.
+    
+
+---
+
+### 20. **What is rate limiting? How do you implement it?**
+
+**Answer:**  
+Rate limiting restricts the number of requests a client can make. You can use libraries like `express-rate-limit` or middleware with Redis for distributed rate limiting.
+
+---
+
+### 21. **Explain CAP theorem.**
+
+**Answer:**  
+In distributed systems:
+
+- **C**onsistency: All nodes see same data.
+    
+- **A**vailability: System is always responsive.
+    
+- **P**artition tolerance: System continues despite network failures.
+    
+
+You can choose **only two** at a time.
+
+---
+
+### 22. **How do you ensure security in a backend application?**
+
+**Answer:**
+
+- Use HTTPS
+    
+- Validate input
+    
+- Use JWT for auth
+    
+- Sanitize data
+    
+- Apply rate limiting
+    
+- Use Helmet for HTTP headers
+    
+- Store passwords securely (bcrypt, argon2)
+    
+
+---
+
+### 23. **What are design patterns used in backend dev?**
+
+**Answer:**
+
+- Singleton
+    
+- Factory
+    
+- Repository
+    
+- Dependency Injection
+    
+- Observer
+    
+- Strategy
+    
+
+---
+
+### 24. **How does authentication differ from authorization?**
+
+**Answer:**
+
+- **Authentication:** Verifies user identity.
+    
+- **Authorization:** Determines access level and permissions.
+    
+
+---
+
+### 25. **What is an ORM? Pros and Cons?**
+
+**Answer:**  
+An ORM (e.g., Sequelize, TypeORM, Prisma) maps objects to DB rows.
+
+- **Pros:** Faster dev, abstraction, cross-DB support.
+    
+- **Cons:** Less control, can generate inefficient queries.
