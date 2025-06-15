@@ -868,3 +868,7 @@ It limits the number of requests per client in a time window to prevent abuse an
 
 **Answer:**  
 Use microservices, load balancing, caching, asynchronous processing, database sharding, CDNs, and proper monitoring.
+
+---
+---
+
