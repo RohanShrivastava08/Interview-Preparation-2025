@@ -499,3 +499,372 @@ Use migration tools (e.g., Sequelize migrations, Flyway) to apply schema changes
 ---
 ---
 
+## ✅ **ADVANCED LEVEL (Q51 – Q100)**
+
+### 51. **What is a circuit breaker pattern?**
+
+**Answer:**  
+It prevents an application from repeatedly trying to execute an operation that is likely to fail, by "breaking" the circuit after failures and retrying after a timeout.
+
+---
+
+### 52. **How do you implement caching in a backend?**
+
+**Answer:**  
+Use in-memory stores like Redis or Memcached to cache frequent DB queries or API responses, reducing latency and load.
+
+---
+
+### 53. **What is the difference between REST and SOAP?**
+
+**Answer:**  
+REST is lightweight, uses HTTP, and supports multiple formats (JSON, XML). SOAP is protocol-based, uses XML, with built-in standards for security and transactions.
+
+---
+
+### 54. **What is the difference between stateless and stateful applications?**
+
+**Answer:**
+
+- **Stateless:** No client session data stored on server (e.g., REST APIs).
+    
+- **Stateful:** Server keeps session info (e.g., WebSocket connections).
+    
+
+---
+
+### 55. **How do you secure REST APIs?**
+
+**Answer:**  
+Use HTTPS, authentication tokens (JWT, OAuth), validate and sanitize input, rate limiting, and use API gateways.
+
+---
+
+### 56. **What is OAuth? How is it different from OpenID Connect?**
+
+**Answer:**  
+OAuth is an authorization framework to grant limited access. OpenID Connect builds on OAuth for user authentication and identity.
+
+---
+
+### 57. **What is a deadlock? How can you prevent it?**
+
+**Answer:**  
+Deadlock is a situation where two or more processes wait indefinitely for each other’s resources. Prevent by using resource ordering, timeouts, or deadlock detection algorithms.
+
+---
+
+### 58. **Explain eventual consistency vs strong consistency.**
+
+**Answer:**
+
+- **Strong consistency:** All nodes see the same data instantly.
+    
+- **Eventual consistency:** Data updates propagate asynchronously; nodes converge over time.
+    
+
+---
+
+### 59. **What is CAP theorem?**
+
+**Answer:**  
+It states that a distributed system can guarantee only two of these three at the same time: Consistency, Availability, and Partition tolerance.
+
+---
+
+### 60. **Explain the concept of idempotency in APIs.**
+
+**Answer:**  
+An operation is idempotent if repeating it produces the same effect as a single request. Example: PUT and DELETE are idempotent; POST is not.
+
+---
+
+### 61. **What is a saga pattern?**
+
+**Answer:**  
+Saga manages distributed transactions by breaking them into smaller transactions with compensating actions for failure rollback.
+
+---
+
+### 62. **How would you implement rate limiting in a distributed system?**
+
+**Answer:**  
+Use centralized stores like Redis or API gateways to maintain counters and apply limits across instances.
+
+---
+
+### 63. **What is a service registry?**
+
+**Answer:**  
+A service registry keeps track of microservices instances and locations to enable service discovery (e.g., Eureka, Consul).
+
+---
+
+### 64. **What is a circuit breaker?**
+
+**Answer:**  
+(Repeated for reinforcement) It detects failures and prevents a system from trying operations that are likely to fail, improving stability.
+
+---
+
+### 65. **Explain Docker and its benefits for backend development.**
+
+**Answer:**  
+Docker containers package applications and dependencies in isolated environments for consistent deployment, easy scaling, and portability.
+
+---
+
+### 66. **What is Kubernetes?**
+
+**Answer:**  
+An orchestration platform to automate deployment, scaling, and management of containerized applications.
+
+---
+
+### 67. **What is horizontal pod autoscaling?**
+
+**Answer:**  
+In Kubernetes, it automatically scales the number of pods based on CPU/memory usage or custom metrics.
+
+---
+
+### 68. **Explain how JWT tokens are validated.**
+
+**Answer:**  
+The server verifies the token’s signature using a secret key/public key, checks expiration and claims before granting access.
+
+---
+
+### 69. **What is a schema migration? Why is it important?**
+
+**Answer:**  
+Schema migration updates the database schema safely, tracking versions to apply or rollback changes without data loss.
+
+---
+
+### 70. **What is the difference between synchronous and asynchronous messaging?**
+
+**Answer:**
+
+- **Synchronous:** Sender waits for response immediately.
+    
+- **Asynchronous:** Sender sends message and continues, response received later.
+    
+
+---
+
+### 71. **What is eventual consistency in distributed caches?**
+
+**Answer:**  
+Cached data may not immediately reflect DB updates but will sync over time, optimizing performance.
+
+---
+
+### 72. **Explain ACID properties in databases.**
+
+**Answer:**
+
+- **Atomicity:** All or nothing.
+    
+- **Consistency:** Valid state transitions.
+    
+- **Isolation:** Concurrent transactions don’t interfere.
+    
+- **Durability:** Once committed, data persists.
+    
+
+---
+
+### 73. **What is a CDN and why use it?**
+
+**Answer:**  
+Content Delivery Network caches static content geographically close to users for faster delivery and reduced server load.
+
+---
+
+### 74. **How do you handle API versioning?**
+
+**Answer:**  
+Use URL versioning (`/v1/users`), header versioning, or query parameters to manage breaking API changes.
+
+---
+
+### 75. **What is Cross-Site Request Forgery (CSRF)? How do you prevent it?**
+
+**Answer:**  
+CSRF tricks users into submitting unauthorized requests. Prevent with anti-CSRF tokens, same-site cookies, and checking origin headers.
+
+---
+
+### 76. **What is a token blacklist?**
+
+**Answer:**  
+A list of JWT tokens that are revoked or invalid before expiration, to prevent unauthorized use.
+
+---
+
+### 77. **What is the difference between a process and a thread?**
+
+**Answer:**  
+A process is an independent execution unit with its own memory space. Threads run within processes sharing memory.
+
+---
+
+### 78. **How do you handle CORS errors in development?**
+
+**Answer:**  
+Configure CORS headers on the server or use proxy setups in dev environments.
+
+---
+
+### 79. **What are the advantages of using NoSQL databases?**
+
+**Answer:**  
+Schema flexibility, horizontal scaling, fast writes, and handling large volumes of unstructured data.
+
+---
+
+### 80. **Explain eventual consistency and conflict resolution in distributed DBs.**
+
+**Answer:**  
+Conflicts arise from concurrent updates; resolved using vector clocks, last-write wins, or application-specific logic.
+
+---
+
+### 81. **What is a health check endpoint?**
+
+**Answer:**  
+A lightweight API endpoint (e.g., `/health`) to check service availability, used by load balancers or orchestrators.
+
+---
+
+### 82. **What is the difference between a monolithic app and microservices?**
+
+**Answer:**  
+(Repeat) Monolithic is a single deployable unit, microservices are loosely coupled services managed independently.
+
+---
+
+### 83. **What is the principle of least privilege?**
+
+**Answer:**  
+Users/applications should have only the minimum access necessary to perform their tasks, improving security.
+
+---
+
+### 84. **How do you implement background jobs in Node.js?**
+
+**Answer:**  
+Use job queues like Bull or Agenda with Redis for delayed, retried, or scheduled tasks.
+
+---
+
+### 85. **What is the difference between blocking and non-blocking code?**
+
+**Answer:**  
+Blocking code waits until operation finishes; non-blocking code allows other tasks to run concurrently.
+
+---
+
+### 86. **What is a webhook? How is it different from polling?**
+
+**Answer:**  
+Webhook pushes event notifications to clients instantly, polling regularly checks for updates.
+
+---
+
+### 87. **What is the role of an API Gateway?**
+
+**Answer:**  
+Manages API requests, enforces security, rate limits, routing, caching, and aggregates services.
+
+---
+
+### 88. **Explain distributed tracing.**
+
+**Answer:**  
+Tracks a request as it flows through multiple microservices to diagnose performance bottlenecks and errors.
+
+---
+
+### 89. **How do you monitor backend applications?**
+
+**Answer:**  
+Use tools like Prometheus, Grafana, ELK stack for logging, metrics, alerting, and performance tracking.
+
+---
+
+### 90. **What are environment variables?**
+
+**Answer:**  
+Configurations stored outside code, like API keys and DB credentials, to keep secrets secure and environments flexible.
+
+---
+
+### 91. **Explain JWT refresh tokens and access tokens.**
+
+**Answer:**  
+Access tokens are short-lived tokens for resource access. Refresh tokens are long-lived and used to get new access tokens.
+
+---
+
+### 92. **How do you prevent SQL injection?**
+
+**Answer:**  
+Use parameterized queries, input validation, ORM, and avoid dynamic SQL string concatenation.
+
+---
+
+### 93. **What are common HTTP methods and their uses?**
+
+**Answer:**  
+GET (retrieve), POST (create), PUT (update), PATCH (partial update), DELETE (delete), OPTIONS (communication options).
+
+---
+
+### 94. **Explain the difference between PUT and PATCH.**
+
+**Answer:**  
+PUT replaces the entire resource; PATCH updates parts of a resource.
+
+---
+
+### 95. **What is the difference between clustered and non-clustered indexes?**
+
+**Answer:**  
+Clustered index determines the physical order of data; non-clustered index is a separate structure pointing to data.
+
+---
+
+### 96. **What is the difference between a cold start and warm start in serverless?**
+
+**Answer:**  
+Cold start happens when a serverless function initializes after inactivity, causing latency. Warm start is a reused instance with faster response.
+
+---
+
+### 97. **How do you implement logging best practices?**
+
+**Answer:**  
+Structured logs, log levels (info, warn, error), correlation IDs, centralized logging, and log rotation.
+
+---
+
+### 98. **What is idempotency key?**
+
+**Answer:**  
+A unique key clients send to ensure repeated requests don’t cause duplicated operations (especially for POST requests).
+
+---
+
+### 99. **What is a rate limiter? How does it protect APIs?**
+
+**Answer:**  
+It limits the number of requests per client in a time window to prevent abuse and DoS attacks.
+
+---
+
+### 100. **How do you design a scalable backend system?**
+
+**Answer:**  
+Use microservices, load balancing, caching, asynchronous processing, database sharding, CDNs, and proper monitoring.
