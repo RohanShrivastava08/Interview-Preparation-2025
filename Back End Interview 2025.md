@@ -495,3 +495,7 @@ Microservices are small, independent services. They communicate via REST, gRPC, 
 
 **Answer:**  
 Use migration tools (e.g., Sequelize migrations, Flyway) to apply schema changes in a controlled, versioned manner ensuring backward compatibility.
+
+---
+---
+
