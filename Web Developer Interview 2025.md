@@ -239,3 +239,21 @@ CopyEdit
 
 ---
 ---
+
+### 🟤 **React.js (Frontend Library)**
+
+46. **What is React?**  
+    React is a JavaScript library for building component-based user interfaces, developed by Facebook.
+    
+47. **What is JSX in React?**  
+    JSX is a syntax extension that lets you write HTML in JavaScript:
+    `const element = <h1>Hello</h1>;`
+
+48. **What are props in React?**  
+    Props (short for properties) are used to pass data from parent to child components. They are read-only.
+    
+49. **What is state in React?**  
+    State is local data managed within a component and can change over time using `useState`.
+    
+50. **What are React Hooks?**  
+    Hooks are functions like `useState`, `useEffect`, etc., that let you use state and lifecycle features in functional components.
