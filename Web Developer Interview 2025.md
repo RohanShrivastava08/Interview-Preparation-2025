@@ -113,3 +113,5 @@
 - `==`: Loose equality, converts types
     
 - `===`: Strict equality, checks type and value
+---
+---
