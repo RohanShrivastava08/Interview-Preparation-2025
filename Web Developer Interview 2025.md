@@ -437,3 +437,38 @@ CopyEdit
 ---
 ---
 
+### 🚀 **Deployment & Hosting**
+
+86. **How do you deploy a website?**
+    
+
+- Frontend: Use Netlify, Vercel, GitHub Pages
+    
+- Fullstack: Use services like Render, Railway, Heroku, or VPS with Node.js + Nginx
+    
+
+87. **What is the difference between development and production modes?**
+    
+
+- **Development**: With debugging, hot reload
+    
+- **Production**: Optimized, minified, error logging enabled
+    
+
+88. **What is a CDN?**  
+    Content Delivery Network — delivers content from geographically distributed servers for faster access.
+    
+89. **How to optimize a website for speed?**
+    
+
+- Minify CSS/JS
+    
+- Compress images
+    
+- Use lazy loading
+    
+- Use caching and CDN
+    
+
+90. **What is server-side rendering (SSR)?**  
+    HTML is rendered on the server and sent to the browser — faster initial load and SEO benefits.
