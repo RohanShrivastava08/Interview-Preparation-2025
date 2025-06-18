@@ -476,3 +476,33 @@ CopyEdit
 ---
 ---
 
+### ♿ **Web Accessibility (a11y)**
+
+91. **What is Web Accessibility?**  
+    Designing websites that can be used by people with disabilities, including those using screen readers.
+    
+92. **What are ARIA roles?**  
+    ARIA (Accessible Rich Internet Applications) roles provide extra accessibility info to assistive technologies.
+    
+93. **How to improve keyboard navigation in web apps?**
+    
+
+- Use semantic tags
+    
+- Manage focus properly
+    
+- Provide visible focus indicators
+    
+
+94. **What is the purpose of `alt` text in images?**  
+    Describes the image content for screen readers and in case the image doesn’t load.
+    
+95. **Which tools can be used to test accessibility?**
+    
+
+- Lighthouse (Chrome DevTools)
+    
+- Axe
+    
+- NVDA (Screen reader)
+
