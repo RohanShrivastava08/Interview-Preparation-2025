@@ -386,3 +386,25 @@ CopyEdit
 ---
 ---
 
+### 🟢 **MongoDB (NoSQL Database)**
+
+76. **What is MongoDB?**  
+    MongoDB is a NoSQL database that stores data in JSON-like documents with dynamic schemas.
+    
+77. **What is the difference between SQL and NoSQL?**
+    
+
+- **SQL**: Relational, table-based
+    
+- **NoSQL**: Document-based, schema-less
+    
+
+78. **How do you insert data into MongoDB?**  
+    Using the `insertOne()` or `insertMany()` methods:
+    `db.users.insertOne({ name: "John", age: 25 });`
+
+79. **How do you find data in MongoDB?**
+    `db.users.find({ name: "John" });`
+
+80. **What is Mongoose?**  
+    Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js that provides schema-based solutions.
