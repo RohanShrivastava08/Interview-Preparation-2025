@@ -383,3 +383,6 @@ CopyEdit
     Functions that execute during the request-response cycle. Example:
     `app.use((req, res, next) => {   console.log('Logged');   next(); });`
 
+---
+---
+
