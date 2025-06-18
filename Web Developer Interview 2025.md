@@ -472,3 +472,7 @@ CopyEdit
 
 90. **What is server-side rendering (SSR)?**  
     HTML is rendered on the server and sent to the browser — faster initial load and SEO benefits.
+
+---
+---
+
