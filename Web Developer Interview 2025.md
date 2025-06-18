@@ -87,3 +87,29 @@
 
 ---
 ---
+### 🟡 **JavaScript (JS)**
+
+21. **What is JavaScript?**  
+    JavaScript is a high-level, interpreted programming language used to create dynamic and interactive web pages.
+    
+22. **What is the difference between `var`, `let`, and `const`?**
+    
+
+- `var`: Function-scoped, hoisted
+    
+- `let`: Block-scoped, not hoisted
+    
+- `const`: Block-scoped, constant value
+    
+
+23. **What is hoisting in JavaScript?**  
+    Variable and function declarations are moved to the top of their scope before code execution.
+    
+24. **What are closures in JavaScript?**  
+    A closure is a function that remembers variables from its lexical scope even when executed outside that scope.
+    
+25. **What’s the difference between `==` and `===` in JavaScript?**
+    
+- `==`: Loose equality, converts types
+    
+- `===`: Strict equality, checks type and value
