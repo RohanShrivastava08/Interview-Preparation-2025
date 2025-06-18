@@ -545,3 +545,6 @@ CopyEdit
 100. **Why should we hire you as a web developer?**  
     “I have strong frontend and backend development skills, hands-on experience with real-world projects, and I’m passionate about clean code, performance, and solving user problems. I’m ready to contribute from day one and grow with the team.”
 
+---
+---
+
