@@ -226,31 +226,13 @@ CopyEdit
     It tells Git which files/folders to ignore and not track (e.g., `node_modules/`, `.env`).
     
 42. **How do you clone a Git repository?**
-    
-
-bash
-
-CopyEdit
-
-`git clone https://github.com/user/repo.git`
+    `git clone https://github.com/user/repo.git`
 
 43. **What is the command to initialize a Git repository?**
-    
-
-bash
-
-CopyEdit
-
-`git init`
+    `git init`
 
 44. **How to stage and commit files in Git?**
-    
-
-bash
-
-CopyEdit
-
-`git add .   git commit -m "Commit message"`
+    `git add .   git commit -m "Commit message"`
 
 45. **What is `git status` used for?**  
     It shows the current state of the working directory and staging area.
