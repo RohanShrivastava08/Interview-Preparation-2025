@@ -408,3 +408,7 @@ CopyEdit
 
 80. **What is Mongoose?**  
     Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js that provides schema-based solutions.
+
+---
+---
+
