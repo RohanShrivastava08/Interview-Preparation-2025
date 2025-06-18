@@ -273,23 +273,15 @@ CopyEdit
 52. **What are Promises in JavaScript?**  
     Promises handle async operations. They can be:
     
-
 - `Pending`
     
 - `Fulfilled`
     
 - `Rejected`
-    
 
 53. **What is `async/await` in JavaScript?**  
     Syntax for handling Promises more cleanly. Example:
-    
-
-js
-
-CopyEdit
-
-`async function fetchData() {   const res = await fetch(url);   const data = await res.json(); }`
+    `async function fetchData() {   const res = await fetch(url);   const data = await res.json(); }`
 
 54. **What is a callback function?**  
     A function passed as an argument to another function, invoked later.
@@ -318,3 +310,4 @@ CopyEdit
     
 60. **What is memoization?**  
     Caching the result of a function call for future reuse to improve performance.
+
