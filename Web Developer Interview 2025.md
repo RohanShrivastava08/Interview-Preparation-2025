@@ -434,3 +434,6 @@ CopyEdit
 85. **What is Content Security Policy (CSP)?**  
     CSP is a browser feature that helps prevent XSS attacks by restricting resource loading policies.
 
+---
+---
+
