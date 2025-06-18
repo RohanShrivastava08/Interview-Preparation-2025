@@ -257,3 +257,6 @@ CopyEdit
     
 50. **What are React Hooks?**  
     Hooks are functions like `useState`, `useEffect`, etc., that let you use state and lifecycle features in functional components.
+---
+---
+
