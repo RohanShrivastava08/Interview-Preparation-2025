@@ -412,3 +412,25 @@ CopyEdit
 ---
 ---
 
+### 🔒 **Security**
+
+81. **What is HTTPS?**  
+    HTTPS (HyperText Transfer Protocol Secure) encrypts data transferred between browser and server using SSL/TLS.
+    
+82. **What is XSS (Cross-site Scripting)?**  
+    An attack where malicious scripts are injected into web pages viewed by users. Prevent using input sanitization and CSP.
+    
+83. **What is CSRF (Cross-Site Request Forgery)?**  
+    An attack where unauthorized commands are sent from a trusted user. Mitigation includes CSRF tokens and same-site cookies.
+    
+84. **How to protect passwords in a web app?**
+    
+
+- Hash passwords using bcrypt or Argon2
+    
+- Never store plain-text passwords
+    
+
+85. **What is Content Security Policy (CSP)?**  
+    CSP is a browser feature that helps prevent XSS attacks by restricting resource loading policies.
+
