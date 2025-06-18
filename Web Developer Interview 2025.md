@@ -85,3 +85,5 @@
     Used for responsive design to apply styles conditionally:
     `@media (max-width: 600px) { ... }`
 
+---
+---
