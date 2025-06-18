@@ -191,3 +191,5 @@ CopyEdit
 35. **How to dynamically create an element in JavaScript?**
     `const div = document.createElement('div'); div.textContent = 'Hello'; document.body.appendChild(div);`
 
+---
+---
