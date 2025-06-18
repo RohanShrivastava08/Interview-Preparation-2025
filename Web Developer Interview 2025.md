@@ -260,3 +260,61 @@ CopyEdit
 ---
 ---
 
+### 🔴 **Advanced JavaScript**
+
+51. **What is the difference between synchronous and asynchronous code?**
+    
+
+- **Synchronous**: Code runs one line after another.
+    
+- **Asynchronous**: Code runs in the background and doesn't block execution (e.g., setTimeout, fetch).
+    
+
+52. **What are Promises in JavaScript?**  
+    Promises handle async operations. They can be:
+    
+
+- `Pending`
+    
+- `Fulfilled`
+    
+- `Rejected`
+    
+
+53. **What is `async/await` in JavaScript?**  
+    Syntax for handling Promises more cleanly. Example:
+    
+
+js
+
+CopyEdit
+
+`async function fetchData() {   const res = await fetch(url);   const data = await res.json(); }`
+
+54. **What is a callback function?**  
+    A function passed as an argument to another function, invoked later.
+    
+55. **What is a higher-order function?**  
+    A function that takes another function as an argument or returns a function.
+    
+56. **What is the event loop in JavaScript?**  
+    The mechanism that handles asynchronous operations and executes callbacks after the stack is clear.
+    
+57. **What is `this` in JavaScript?**  
+    Refers to the context in which a function is called. In objects, it refers to the object.
+    
+58. **What is the difference between `call()`, `apply()`, and `bind()`?**
+    
+
+- `call`: Calls a function with a given `this` and args
+    
+- `apply`: Same as `call` but args as an array
+    
+- `bind`: Returns a new function with `this` bound
+    
+
+59. **What is currying in JavaScript?**  
+    Transforming a function with multiple arguments into a sequence of functions each with a single argument.
+    
+60. **What is memoization?**  
+    Caching the result of a function call for future reuse to improve performance.
