@@ -34,3 +34,54 @@
 
 ---
 ---
+### 🟣 **CSS (Cascading Style Sheets)**
+
+11. **What is CSS?**  
+    CSS is used to style HTML elements, controlling layout, colors, fonts, and spacing.
+    
+12. **What is the difference between ID and Class in CSS?**  
+    `ID` is unique (`#id`) and used once; `Class` (`.class`) can be reused across elements.
+    
+13. **What is the Box Model in CSS?**  
+    It includes:  
+    `Content → Padding → Border → Margin`
+    
+14. **What are pseudo-classes in CSS?**  
+    Pseudo-classes define special states:  
+    Example: `:hover`, `:first-child`, `:nth-child(n)`
+    
+15. **Difference between absolute, relative, fixed, and sticky positioning?**
+    
+
+- `relative`: Positioned relative to its normal position
+    
+- `absolute`: Relative to the nearest positioned ancestor
+    
+- `fixed`: Relative to the viewport
+    
+- `sticky`: Sticks within a scroll range
+    
+
+16. **What is specificity in CSS?**  
+    It determines which style is applied when multiple rules match. Inline > ID > Class > Tag
+    
+17. **How can you apply the same style to multiple elements?**  
+    Use a common class name and apply styles using `.classname { ... }`.
+    
+18. **How to import a CSS file into another?**  
+    Use `@import 'style.css';` or link both in HTML.
+    
+19. **What is the difference between `inline`, `block`, and `inline-block`?**
+    
+
+- `inline`: No new line, can’t set width/height
+    
+- `block`: Starts on new line, can set width/height
+    
+- `inline-block`: Like inline, but can set dimensions
+    
+
+20. **What is a media query in CSS?**  
+    Used for responsive design to apply styles conditionally:
+    `@media (max-width: 600px) { ... }`
+
