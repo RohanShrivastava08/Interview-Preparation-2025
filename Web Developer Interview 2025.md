@@ -509,3 +509,39 @@ CopyEdit
 ---
 ---
 
+### 🟡 **Performance & Optimization**
+
+96. **How to reduce website load time?**
+    
+
+- Minify assets
+    
+- Code splitting
+    
+- Use lazy loading
+    
+- Cache static assets
+    
+
+97. **What is lazy loading?**  
+    Images, components, or data are only loaded when they are about to be viewed (e.g., as the user scrolls).
+    
+98. **What is debouncing and throttling?**
+    
+
+- **Debouncing**: Limits function execution until a pause (e.g., search input)
+    
+- **Throttling**: Ensures a function executes at most once per interval (e.g., scroll events)
+    
+
+99. **What is Time to First Byte (TTFB)?**  
+    The time taken by the browser to receive the first byte from the server — a key performance metric.
+    
+
+---
+
+### 🧑‍💼 **HR & Miscellaneous**
+
+100. **Why should we hire you as a web developer?**  
+    “I have strong frontend and backend development skills, hands-on experience with real-world projects, and I’m passionate about clean code, performance, and solving user problems. I’m ready to contribute from day one and grow with the team.”
+
