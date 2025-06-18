@@ -365,3 +365,21 @@ CopyEdit
 ---
 ---
 
+### 🟡 **Node.js & Express.js**
+
+71. **What is Node.js?**  
+    Node.js is a runtime environment that allows you to run JavaScript on the server side.
+    
+72. **What is NPM?**  
+    Node Package Manager — used to install, manage packages/libraries in a Node.js project.
+    
+73. **What is Express.js?**  
+    A fast, minimalist web framework for Node.js to build APIs and web apps.
+    
+74. **How do you create a simple server using Express?**
+    `const express = require('express'); const app = express(); app.get('/', (req, res) => res.send('Hello World')); app.listen(3000);`
+
+75. **What is middleware in Express?**  
+    Functions that execute during the request-response cycle. Example:
+    `app.use((req, res, next) => {   console.log('Logged');   next(); });`
+
