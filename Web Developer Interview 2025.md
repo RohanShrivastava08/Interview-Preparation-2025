@@ -236,3 +236,6 @@ CopyEdit
 
 45. **What is `git status` used for?**  
     It shows the current state of the working directory and staging area.
+
+---
+---
