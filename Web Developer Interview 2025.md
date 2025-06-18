@@ -193,3 +193,64 @@ CopyEdit
 
 ---
 ---
+### 🔵 **Git & Version Control**
+
+36. **What is Git?**  
+    Git is a distributed version control system for tracking code changes during software development.
+    
+37. **What is GitHub?**  
+    GitHub is a cloud-based hosting service that lets you manage Git repositories and collaborate on projects.
+    
+38. **What is the difference between `git fetch` and `git pull`?**
+    
+
+- `git fetch`: Gets changes from the remote but doesn’t merge
+    
+- `git pull`: Fetches + merges changes into current branch
+    
+
+39. **How do you resolve a merge conflict in Git?**
+    
+
+- Edit the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
+    
+- Save and stage the file
+    
+- Run `git commit`
+    
+
+40. **What is a Git branch?**  
+    A branch is a lightweight movable pointer to a commit, used for parallel development.
+    
+41. **What is the purpose of `.gitignore` file?**  
+    It tells Git which files/folders to ignore and not track (e.g., `node_modules/`, `.env`).
+    
+42. **How do you clone a Git repository?**
+    
+
+bash
+
+CopyEdit
+
+`git clone https://github.com/user/repo.git`
+
+43. **What is the command to initialize a Git repository?**
+    
+
+bash
+
+CopyEdit
+
+`git init`
+
+44. **How to stage and commit files in Git?**
+    
+
+bash
+
+CopyEdit
+
+`git add .   git commit -m "Commit message"`
+
+45. **What is `git status` used for?**  
+    It shows the current state of the working directory and staging area.
