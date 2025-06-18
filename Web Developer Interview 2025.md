@@ -313,3 +313,52 @@ CopyEdit
 
 ---
 ---
+
+### 🟣 **APIs & RESTful Services**
+
+61. **What is an API?**  
+    API (Application Programming Interface) is a way for systems to communicate over the web.
+    
+62. **What is REST API?**  
+    REST (Representational State Transfer) is a design pattern using standard HTTP methods: GET, POST, PUT, DELETE.
+    
+63. **What is the difference between GET and POST methods?**
+    
+
+- **GET**: Retrieves data, visible in URL
+    
+- **POST**: Sends data, not visible in URL
+    
+
+64. **What is JSON?**  
+    JSON (JavaScript Object Notation) is a lightweight format to exchange data between a server and client.
+    
+65. **What is the purpose of `fetch()` in JavaScript?**  
+    It is used to make network requests and returns a Promise:
+    `fetch(url).then(res => res.json()).then(data => console.log(data));`
+
+66. **What are status codes in HTTP? Give examples.**
+    
+
+- 200: OK
+    
+- 201: Created
+    
+- 404: Not Found
+    
+- 500: Server Error
+    
+
+67. **What are headers in HTTP requests?**  
+    Metadata like `Content-Type`, `Authorization`, etc., sent with requests.
+    
+68. **How to send data using POST method in fetch?**
+    `fetch('/api', {   method: 'POST',   headers: { 'Content-Type': 'application/json' },   body: JSON.stringify(data) });`
+
+69. **What is CORS?**  
+    Cross-Origin Resource Sharing allows restricted resources to be requested from another domain.
+    
+70. **How do you handle API errors in JavaScript?**  
+    Using `.catch()` or `try-catch` with `async/await`:
+    `try {   const res = await fetch(url);   if (!res.ok) throw new Error('API error'); } catch (err) {   console.error(err); }`
+
