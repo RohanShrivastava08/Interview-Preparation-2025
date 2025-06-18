@@ -115,3 +115,79 @@
 - `===`: Strict equality, checks type and value
 ---
 ---
+### 🟢 **DOM & Events**
+
+26. **What is the DOM (Document Object Model)?**  
+    The DOM is a programming interface that represents the structure of HTML documents as a tree of objects.
+    
+27. **How do you access elements in the DOM using JavaScript?**  
+    Using methods like:
+    
+
+- `document.getElementById("id")`
+    
+- `document.querySelector(".class")`
+    
+- `document.querySelectorAll("div")`
+    
+
+28. **What is event delegation in JavaScript?**  
+    Event delegation allows you to add a single event listener to a parent element to handle events from its children using `event.target`.
+    
+29. **What is event bubbling and capturing?**
+    
+
+- **Bubbling**: Event flows from the target element up to the root.
+    
+- **Capturing**: Event flows from the root down to the target.
+    
+
+30. **How to prevent event bubbling?**  
+    Use `event.stopPropagation()` to stop the event from propagating further.
+    
+31. **What is `addEventListener` and its syntax?**  
+    Adds an event listener to an element:
+    
+
+js
+
+CopyEdit
+
+`element.addEventListener('click', functionName);`
+
+32. **How to remove an event listener?**  
+    Use `removeEventListener()` with the same function reference:
+    
+
+js
+
+CopyEdit
+
+`element.removeEventListener('click', functionName);`
+
+33. **What are different types of DOM events?**  
+    Common events include:
+    
+
+- `click`
+    
+- `keydown`, `keyup`
+    
+- `submit`
+    
+- `change`
+    
+- `mouseover`, `mouseout`
+    
+
+34. **What is the difference between `innerHTML` and `textContent`?**
+    
+
+- `innerHTML`: Parses and renders HTML
+    
+- `textContent`: Only gets/sets plain text
+    
+
+35. **How to dynamically create an element in JavaScript?**
+    `const div = document.createElement('div'); div.textContent = 'Hello'; document.body.appendChild(div);`
+
