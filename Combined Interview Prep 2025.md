@@ -289,3 +289,6 @@
     
 - CSR (Client-Side Rendering): renders in browser
 
+---
+---
+
