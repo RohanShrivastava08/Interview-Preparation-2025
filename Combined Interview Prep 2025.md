@@ -158,3 +158,6 @@
 40. **How do you handle errors in Express?**  
     Using middleware with 4 arguments: `function (err, req, res, next) {}`
 
+---
+---
+
