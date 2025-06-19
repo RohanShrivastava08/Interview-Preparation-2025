@@ -327,3 +327,36 @@
 ---
 ---
 
+## ✅ **Web Security Essentials**
+
+81. **What is XSS and how to prevent it?**  
+    Cross-Site Scripting — injecting malicious scripts. Prevent with input sanitization and encoding output.
+    
+82. **What is CSRF and how to prevent it?**  
+    Cross-Site Request Forgery — making unwanted actions on behalf of a user. Use tokens, `SameSite` cookies.
+    
+83. **What is HTTPS?**  
+    HTTP over SSL/TLS, providing encryption and secure communication.
+    
+84. **What are JWTs?**  
+    JSON Web Tokens used for stateless authentication, storing user info in a signed token.
+    
+85. **How does OAuth work?**  
+    A protocol for authorization — grants third-party apps access without sharing passwords.
+    
+86. **What is CORS and how to fix CORS errors?**  
+    Cross-Origin Resource Sharing — fix by setting proper headers (`Access-Control-Allow-Origin`).
+    
+87. **What is content security policy (CSP)?**  
+    A header to control what resources are loaded to prevent XSS attacks.
+    
+88. **What is SQL Injection?**  
+    Injecting SQL code into input fields. Prevent with parameterized queries.
+    
+89. **What is Bcrypt?**  
+    A hashing function used to securely store passwords.
+    
+90. **What are environment variables and why use them?**  
+    Store sensitive config values like API keys without hardcoding them.
+
+
