@@ -244,3 +244,48 @@
 ---
 ---
 
+## ✅ **Web APIs & Browser**
+
+61. **What is localStorage vs sessionStorage?**
+    
+
+- `localStorage`: persists even after tab/browser close
+    
+- `sessionStorage`: cleared on tab/browser close
+    
+
+62. **What is the Fetch API?**  
+    A modern way to make network requests:
+    `fetch(url).then(res => res.json());`
+
+63. **What is the difference between cookies and localStorage?**  
+    Cookies: sent with every HTTP request; localStorage is not.
+    
+64. **What are service workers?**  
+    Background scripts enabling offline support, caching, and push notifications.
+    
+65. **What is a WebSocket?**  
+    A full-duplex communication channel over a single TCP connection.
+    
+66. **What is a single-page application (SPA)?**  
+    A web app that loads once and dynamically updates content without full page reloads.
+    
+67. **How to optimize performance in front-end apps?**  
+    Lazy loading, code splitting, minification, caching, avoiding re-renders, using CDN.
+    
+68. **What is lazy loading?**  
+    Deferring loading of non-critical resources until needed.
+    
+69. **What is prefetching vs preloading?**
+
+- `preload`: loads resources you’ll definitely need
+    
+- `prefetch`: hints browser to load resources for future navigation
+    
+
+70. **What is SSR and CSR?**
+
+- SSR (Server-Side Rendering): renders on server
+    
+- CSR (Client-Side Rendering): renders in browser
+
