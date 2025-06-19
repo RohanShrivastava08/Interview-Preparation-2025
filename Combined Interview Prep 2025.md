@@ -161,3 +161,35 @@
 ---
 ---
 
+## ✅ **MongoDB (Backend + MERN + Full Stack)**
+
+41. **What is MongoDB?**  
+    A NoSQL, document-oriented database that stores data in BSON format.
+    
+42. **Difference between SQL and NoSQL?**  
+    SQL: structured, relational. NoSQL: unstructured or semi-structured, document/key-value-based.
+    
+43. **What is a collection in MongoDB?**  
+    Equivalent to a table in SQL; it stores multiple documents.
+    
+44. **What is a document in MongoDB?**  
+    A record in a MongoDB collection, stored in JSON/BSON format.
+    
+45. **How to connect MongoDB with Node.js?**  
+    Using `mongoose.connect()` or native MongoDB driver.
+    
+46. **What is Mongoose?**  
+    An ODM (Object Data Modeling) library for MongoDB and Node.js.
+    
+47. **What is schema in Mongoose?**  
+    Defines the structure of a document like field types, validators, etc.
+    
+48. **How to define relationships in MongoDB?**  
+    Via references (ObjectId) or embedded documents.
+    
+49. **How do you handle indexing in MongoDB?**  
+    Use `.createIndex()` or define indexes in Mongoose schema for faster querying.
+    
+50. **How do you perform CRUD operations in MongoDB?**  
+    Using `Model.create()`, `Model.find()`, `Model.updateOne()`, `Model.deleteOne()`
+
