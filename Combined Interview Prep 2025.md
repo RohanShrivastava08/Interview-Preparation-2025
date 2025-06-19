@@ -83,3 +83,5 @@
 20. **What is the difference between synchronous and asynchronous JavaScript?**  
     Synchronous blocks code execution; asynchronous runs in the background and doesn’t block the thread.
 
+---
+---
