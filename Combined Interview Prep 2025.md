@@ -118,3 +118,5 @@
 30. **How does React handle re-rendering?**  
     Via reconciliation and diffing the virtual DOM tree.
 
+---
+---
