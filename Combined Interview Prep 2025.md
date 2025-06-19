@@ -85,3 +85,36 @@
 
 ---
 ---
+
+## ✅ **React.js (Frontend + MERN + Full Stack)**
+
+21. **What is React?**  
+    A JavaScript library for building UI components, using a virtual DOM for efficient rendering.
+    
+22. **What are components in React?**  
+    Reusable UI building blocks. Can be functional or class-based.
+    
+23. **What are hooks in React?**  
+    Functions like `useState`, `useEffect` that allow functional components to manage state and lifecycle.
+    
+24. **Difference between functional and class components?**  
+    Functional: simpler, use hooks. Class: use lifecycle methods and `this`.
+    
+25. **What is JSX?**  
+    A syntax extension that allows writing HTML-like code in JavaScript.
+    
+26. **What is state in React?**  
+    Data managed inside components that influences rendering.
+    
+27. **What is props in React?**  
+    Data passed from parent to child components, read-only.
+    
+28. **What is useEffect used for?**  
+    To perform side effects like data fetching, subscriptions, or DOM manipulation.
+    
+29. **What is virtual DOM?**  
+    An in-memory representation of the real DOM that improves performance by reducing direct manipulations.
+    
+30. **How does React handle re-rendering?**  
+    Via reconciliation and diffing the virtual DOM tree.
+
