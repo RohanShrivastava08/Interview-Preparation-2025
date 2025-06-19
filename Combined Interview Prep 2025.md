@@ -363,3 +363,40 @@
 ---
 ---
 
+## ✅ **DevOps Basics: Git, CI/CD, Docker**
+
+91. **What is Git?**  
+    A version control system to track code changes and collaborate with others.
+    
+92. **Difference between Git pull and Git fetch?**
+    
+
+- `fetch`: gets changes but doesn’t merge
+    
+- `pull`: fetches and merges changes
+    
+
+93. **What is a merge conflict in Git?**  
+    When changes in two branches affect the same part of a file — must be resolved manually.
+    
+94. **What is CI/CD?**  
+    Continuous Integration/Deployment — automating build, test, and deployment pipelines.
+    
+95. **What is Docker?**  
+    A platform to package applications and dependencies into containers for consistency.
+    
+96. **What is a Dockerfile?**  
+    A script containing instructions to build a Docker image.
+    
+97. **What is a container?**  
+    A lightweight, portable unit containing everything needed to run a piece of software.
+    
+98. **What is version control and why is it important?**  
+    Tracks code changes, helps in collaboration, rollback, and maintaining code history.
+    
+99. **What is GitHub Actions / GitLab CI?**  
+    Tools for automating workflows like testing, building, and deploying.
+    
+100. **What is `.gitignore` used for?**  
+    To tell Git which files/folders to exclude from version control.
+
