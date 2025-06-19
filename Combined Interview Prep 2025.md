@@ -193,3 +193,6 @@
 50. **How do you perform CRUD operations in MongoDB?**  
     Using `Model.create()`, `Model.find()`, `Model.updateOne()`, `Model.deleteOne()`
 
+---
+---
+
