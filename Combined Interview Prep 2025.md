@@ -120,3 +120,41 @@
 
 ---
 ---
+
+## ✅ **Node.js & Express.js (Backend + MERN + Full Stack)**
+
+31. **What is Node.js?**  
+    A runtime environment that allows executing JavaScript on the server side.
+    
+32. **What is Express.js?**  
+    A minimal and flexible Node.js web application framework.
+    
+33. **How does routing work in Express?**  
+    With methods like `app.get()`, `app.post()`, defining handlers for different paths.
+    
+34. **What is middleware in Express?**  
+    Functions that have access to the request and response objects and the next middleware.
+    
+35. **What is the role of `package.json`?**  
+    Contains metadata and dependencies of the Node.js project.
+    
+36. **What is `nodemon` used for?**  
+    A tool that automatically restarts the server when file changes are detected.
+    
+37. **What is RESTful API?**  
+    An architectural style that uses HTTP methods for CRUD operations on resources.
+    
+38. **What is CORS?**  
+    Cross-Origin Resource Sharing — browser security feature that restricts resource sharing between origins.
+    
+39. **What is the difference between PUT and PATCH?**
+    
+
+- `PUT`: replaces the whole resource
+    
+- `PATCH`: updates only the specified fields
+    
+
+40. **How do you handle errors in Express?**  
+    Using middleware with 4 arguments: `function (err, req, res, next) {}`
+
