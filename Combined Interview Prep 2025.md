@@ -324,3 +324,6 @@
 80. **What is a reverse proxy?**  
     A server that forwards client requests to backend servers (e.g., Nginx).
 
+---
+---
+
