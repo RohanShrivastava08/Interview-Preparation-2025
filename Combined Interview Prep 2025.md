@@ -196,3 +196,48 @@
 ---
 ---
 
+## ✅ **Advanced JavaScript & ES6+**
+
+51. **What is destructuring in JavaScript?**  
+    A syntax to extract values from arrays or objects:
+    `const [a, b] = [1, 2];   const {name} = person;`
+
+52. **What is the spread operator?**  
+    Used to expand iterable elements:
+    `const arr = [...arr1, ...arr2];`
+
+53. **What is the rest parameter?**  
+    Collects all remaining elements into an array:
+    `function sum(...nums) {}`
+
+54. **What is a higher-order function?**  
+    A function that takes other functions as arguments or returns a function.
+    
+55. **What is the difference between `map()`, `forEach()`, and `filter()`?**
+    
+- `map`: transforms array
+    
+- `forEach`: performs side effects
+    
+- `filter`: returns elements meeting condition
+    
+
+56. **What is the difference between shallow copy and deep copy?**
+    
+- Shallow: copies reference
+    
+- Deep: copies actual values recursively
+    
+
+57. **How does JavaScript handle memory management?**  
+    Uses a garbage collector to free memory from unreachable objects.
+    
+58. **What is a debounce function?**  
+    Limits how often a function is executed — runs after delay of inactivity.
+    
+59. **What is throttling in JavaScript?**  
+    Ensures a function runs only once per specified time interval.
+    
+60. **What is a generator function?**  
+    Special function that can pause execution using `yield`.
+
