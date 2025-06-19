@@ -292,3 +292,35 @@
 ---
 ---
 
+## ✅ **System Design Basics for Web Devs**
+
+71. **What happens when you enter a URL in the browser?**  
+    DNS lookup → TCP handshake → HTTP request → Server response → Rendered page.
+    
+72. **What is load balancing?**  
+    Distributing traffic across multiple servers to ensure reliability and performance.
+    
+73. **What is CDN?**  
+    Content Delivery Network — serves assets from geographically closer servers.
+    
+74. **What is caching and how does it help?**  
+    Storing copies of resources to reduce load time and server usage.
+    
+75. **Difference between monolithic and microservices architecture?**  
+    Monolithic: single codebase; Microservices: modular services communicating via APIs.
+    
+76. **What is scalability?**  
+    The system’s ability to handle increased load by adding resources.
+    
+77. **What is rate limiting?**  
+    Restricting the number of API requests a client can make.
+    
+78. **What is API versioning?**  
+    Using `/v1/`, `/v2/` in endpoints to manage backward compatibility.
+    
+79. **What are webhooks?**  
+    Server-side callbacks triggered by events to notify other systems.
+    
+80. **What is a reverse proxy?**  
+    A server that forwards client requests to backend servers (e.g., Nginx).
+
