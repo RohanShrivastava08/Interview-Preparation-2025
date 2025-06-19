@@ -400,3 +400,7 @@
 100. **What is `.gitignore` used for?**  
     To tell Git which files/folders to exclude from version control.
 
+---
+---
+
+----X----
