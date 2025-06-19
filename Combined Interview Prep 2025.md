@@ -241,3 +241,6 @@
 60. **What is a generator function?**  
     Special function that can pause execution using `yield`.
 
+---
+---
+
